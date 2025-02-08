@@ -117,7 +117,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         }
         else
         {
-
+            player.playerAnimatorManager.PlayTargetActionAnimation("SlimeBackstep", true, true);
         }
     }
 }
