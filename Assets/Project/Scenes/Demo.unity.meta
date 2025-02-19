@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 1bc542ca95527c44293bbc98b9a519f2
-NativeFormatImporter:
+guid: 53900dbb03df0fd4c869dfe0cb88d5d4
+DefaultImporter:
   externalObjects: {}
-  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -11,5 +10,5 @@ AssetOrigin:
   productId: 270038
   packageName: Critter Environment
   packageVersion: 2.3
-  assetPath: Assets/Project/3DPixelArtEnvironment/Materials/Metal.mat
+  assetPath: Assets/Project/3DPixelArtEnvironment/Demo/Demo.unity
   uploadId: 729467

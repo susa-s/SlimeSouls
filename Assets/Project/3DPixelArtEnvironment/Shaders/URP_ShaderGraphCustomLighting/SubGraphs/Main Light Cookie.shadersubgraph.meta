@@ -13,6 +13,6 @@ AssetOrigin:
   productId: 270038
   packageName: Critter Environment
   packageVersion: 2.3
-  assetPath: Assets/3DPixelArtEnvironment/Shaders/URP_ShaderGraphCustomLighting/SubGraphs/Main
+  assetPath: Assets/Project/3DPixelArtEnvironment/Shaders/URP_ShaderGraphCustomLighting/SubGraphs/Main
     Light Cookie.shadersubgraph
   uploadId: 729467

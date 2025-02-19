@@ -116,7 +116,7 @@ Material:
     - _Cloud_Change: 0.005
     - _Cloud_Cover: 0.6
     - _Cloud_Density: 0.025
-    - _Cloud_Strength: 2
+    - _Cloud_Strength: 0.5
     - _Cull: 2
     - _Cutoff: 0.5
     - _DepthEdgeStrength: 1.25

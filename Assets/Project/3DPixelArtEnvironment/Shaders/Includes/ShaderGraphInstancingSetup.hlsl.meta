@@ -10,5 +10,5 @@ AssetOrigin:
   productId: 270038
   packageName: Critter Environment
   packageVersion: 2.3
-  assetPath: Assets/3DPixelArtEnvironment/Shaders/Includes/ShaderGraphInstancingSetup.hlsl
+  assetPath: Assets/Project/3DPixelArtEnvironment/Shaders/Includes/ShaderGraphInstancingSetup.hlsl
   uploadId: 729467

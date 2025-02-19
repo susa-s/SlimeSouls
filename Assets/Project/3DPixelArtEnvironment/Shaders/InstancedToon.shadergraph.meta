@@ -13,5 +13,5 @@ AssetOrigin:
   productId: 270038
   packageName: Critter Environment
   packageVersion: 2.3
-  assetPath: Assets/3DPixelArtEnvironment/Shaders/InstancedToon.shadergraph
+  assetPath: Assets/Project/3DPixelArtEnvironment/Shaders/InstancedToon.shadergraph
   uploadId: 729467

@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2220822697
+  GlobalObjectIdHash: 4020895412
   InScenePlacedSourceGlobalObjectIdHash: 4020895412
   DeferredDespawnTick: 0
   Ownership: 1
@@ -152,6 +152,7 @@ MonoBehaviour:
   canMove: 1
   playerAnimatorManager: {fileID: 0}
   playerLocomotionManager: {fileID: 0}
+  playerNetworkManager: {fileID: 0}
 --- !u!114 &3654898505301161094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +170,7 @@ MonoBehaviour:
   moveAmount: 0
   walkingSpeed: 3
   runningSpeed: 5
+  sprintingSpeed: 7
   rotationSpeed: 8
 --- !u!114 &3612122331523516214
 MonoBehaviour:
@@ -195,6 +197,8 @@ MonoBehaviour:
   verticalMovement:
     m_InternalValue: 0
   moveAmount:
+    m_InternalValue: 0
+  isSprinting:
     m_InternalValue: 0
 --- !u!114 &1372915389450708326
 MonoBehaviour:
