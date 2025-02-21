@@ -1,0 +1,60 @@
+using UnityEngine;
+
+public class CharacterStatsManager : MonoBehaviour
+{
+    CharacterManager Character;
+
+    [Header("Stamina Regneration")]
+    private float staminaRegenerationTimer = 0;
+    private float staminaTickTimer = 0;
+    [SerializeField] float staminaRegenerationDelay = 1;
+    [SerializeField] float staminaRegenAmount = 0.25f;
+
+    protected virtual void Awake()
+    {
+        Character = GetComponent<CharacterManager>();
+    }
+
+    public int CalculateStaminaBasedOnEnduranceLevel(int endurance)
+    {
+        float stamina = 0;
+        stamina = endurance * 50;
+        return Mathf.RoundToInt(stamina);
+    }
+
+    public virtual void RegenerateStamina()
+    {
+        if (!Character.IsOwner)
+            return;
+
+        if (Character.characterNetworkManager.isSprinting.Value)
+            return;
+
+        if (Character.isPerformingAction)
+            return;
+
+        staminaRegenerationTimer += Time.deltaTime;
+
+        if (staminaRegenerationTimer >= staminaRegenerationDelay)
+        {
+            if (Character.characterNetworkManager.currentStamina.Value < Character.characterNetworkManager.maxStamina.Value)
+            {
+                staminaTickTimer += Time.deltaTime;
+
+                if (staminaTickTimer >= 0.1)
+                {
+                    staminaTickTimer = 0;
+                    Character.characterNetworkManager.currentStamina.Value += staminaRegenAmount;
+                }
+            }
+        }
+    }
+
+    public virtual void ResetStaminaRegenTimer(float previousStaminaAmount, float currentStaminaAmount)
+    {
+        if(currentStaminaAmount < previousStaminaAmount)
+        {
+            staminaRegenerationTimer = 0;
+        }
+    }
+}

@@ -77,13 +77,13 @@ PrefabInstance:
       addedObject: {fileID: 4899160647237015754}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 3612122331523516214}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 7562670885902603640}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3654898505301161094}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3612122331523516214}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1372915389450708326}
@@ -99,6 +99,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8967741625121902652}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5205164451055982464}
   m_SourcePrefab: {fileID: 100100000, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
 --- !u!1 &6190084127861701539 stripped
 GameObject:
@@ -130,48 +133,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &7562670885902603640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190084127861701539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ddcf9aaf8155cc4086334d72af7d5ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  characterController: {fileID: 0}
-  animator: {fileID: 0}
-  characterNetworkManager: {fileID: 0}
-  isPerformingAction: 0
-  applyRootMotion: 0
-  canRotate: 1
-  canMove: 1
-  playerAnimatorManager: {fileID: 0}
-  playerLocomotionManager: {fileID: 0}
-  playerNetworkManager: {fileID: 0}
---- !u!114 &3654898505301161094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190084127861701539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541b569f2346dc1408491f783599aae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  verticalMovement: 0
-  horizontalMovement: 0
-  moveAmount: 0
-  walkingSpeed: 3
-  runningSpeed: 5
-  sprintingSpeed: 7
-  rotationSpeed: 8
 --- !u!114 &3612122331523516214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +161,57 @@ MonoBehaviour:
     m_InternalValue: 0
   isSprinting:
     m_InternalValue: 0
+  endurance:
+    m_InternalValue: 1
+  currentStamina:
+    m_InternalValue: 0
+  maxStamina:
+    m_InternalValue: 0
+--- !u!114 &7562670885902603640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190084127861701539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddcf9aaf8155cc4086334d72af7d5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  characterController: {fileID: 0}
+  animator: {fileID: 0}
+  characterNetworkManager: {fileID: 0}
+  isPerformingAction: 0
+  applyRootMotion: 0
+  canRotate: 1
+  canMove: 1
+  playerAnimatorManager: {fileID: 0}
+  playerLocomotionManager: {fileID: 0}
+  playerNetworkManager: {fileID: 0}
+  playerStatsManager: {fileID: 0}
+--- !u!114 &3654898505301161094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190084127861701539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541b569f2346dc1408491f783599aae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verticalMovement: 0
+  horizontalMovement: 0
+  moveAmount: 0
+  walkingSpeed: 3
+  runningSpeed: 5
+  sprintingSpeed: 7
+  rotationSpeed: 8
+  sprintingStaminaCost: 5
+  dodgeStaminaCost: 8
 --- !u!114 &1372915389450708326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,3 +380,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc0767770e8a624b9acfa0f61327844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5205164451055982464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190084127861701539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6764985e0b5d0a841b23cbc0017e154c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaRegenerationDelay: 1.5
+  staminaRegenAmount: 1
