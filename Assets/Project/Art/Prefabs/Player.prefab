@@ -206,6 +206,7 @@ MonoBehaviour:
   verticalMovement: 0
   horizontalMovement: 0
   moveAmount: 0
+  gravity: -9.8
   walkingSpeed: 3
   runningSpeed: 5
   sprintingSpeed: 7
@@ -392,5 +393,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6764985e0b5d0a841b23cbc0017e154c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaRegenerationDelay: 1.5
+  staminaRegenerationDelay: 1
   staminaRegenAmount: 1

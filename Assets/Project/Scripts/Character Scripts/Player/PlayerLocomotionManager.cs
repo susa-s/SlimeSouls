@@ -11,6 +11,8 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     [Header("Movement Settings")]
     private Vector3 moveDirection;
     private Vector3 targetRotationDirection;
+    [SerializeField] float gravity = -9.81f;
+    private float verticalVelocity = 0f;
     [SerializeField] float walkingSpeed = 2.5f;
     [SerializeField] float runningSpeed = 4.5f;
     [SerializeField] float sprintingSpeed = 7;
@@ -46,6 +48,8 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
             player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);
         }
+
+        ApplyGravity();
     }
 
     public void HandleAllMovement()
@@ -86,6 +90,10 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
                 player.characterController.Move(moveDirection * walkingSpeed * Time.deltaTime);
             }
         }
+
+        // Apply vertical velocity (gravity) for grounded movement
+        Vector3 velocity = new Vector3(moveDirection.x, verticalVelocity, moveDirection.z);
+        player.characterController.Move(velocity * Time.deltaTime);
     }
 
     private void HandleRotation()
@@ -162,5 +170,17 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         }
 
         player.playerNetworkManager.currentStamina.Value -= dodgeStaminaCost;
+    }
+
+    public void ApplyGravity()
+    {
+        if (player.characterController.isGrounded)
+        {
+            verticalVelocity = -2f; // Small value to keep the character grounded
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime; // Apply gravity over time
+        }
     }
 }
