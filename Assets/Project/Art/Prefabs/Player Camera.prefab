@@ -57,7 +57,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   leftAndRightLookAngle: 0
-  upAndDownLookAngle: 0
+  upAndDownLookAngle: 25
 --- !u!1 &5215290745418103151
 GameObject:
   m_ObjectHideFlags: 0

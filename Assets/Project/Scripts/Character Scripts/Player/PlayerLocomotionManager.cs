@@ -49,7 +49,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);
         }
 
-        ApplyGravity();
+        //ApplyGravity();
     }
 
     public void HandleAllMovement()
