@@ -11,13 +11,18 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     [Header("Movement Settings")]
     private Vector3 moveDirection;
     private Vector3 targetRotationDirection;
-    [SerializeField] float gravity = -9.81f;
-    private float verticalVelocity = 0f;
     [SerializeField] float walkingSpeed = 2.5f;
     [SerializeField] float runningSpeed = 4.5f;
     [SerializeField] float sprintingSpeed = 7;
     [SerializeField] float rotationSpeed = 8;
     [SerializeField] int sprintingStaminaCost = 1;
+
+    [Header("Jump")]
+    [SerializeField] float jumpHeight = 4;
+    [SerializeField] float jumpStaminaCost = 8;
+    [SerializeField] float jumpForwardSpeed = 4.5f;
+    [SerializeField] float freeFallSpeed = 2.5f;
+    private Vector3 jumpDirection;
 
     [Header("Dodge")]
     private Vector3 rollDirection;
@@ -48,14 +53,14 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
             player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);
         }
-
-        //ApplyGravity();
     }
 
     public void HandleAllMovement()
     {
         HandleGroundedMovement();
         HandleRotation();
+        HandleJumpMovement();
+        HandleFreeFallMovement();
     }
 
     private void GetVerticalAndHorizontalInputs()
@@ -90,10 +95,28 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
                 player.characterController.Move(moveDirection * walkingSpeed * Time.deltaTime);
             }
         }
+    }
 
-        // Apply vertical velocity (gravity) for grounded movement
-        Vector3 velocity = new Vector3(moveDirection.x, verticalVelocity, moveDirection.z);
-        player.characterController.Move(velocity * Time.deltaTime);
+    private void HandleJumpMovement()
+    {
+        if (player.isJumping)
+        {
+            player.characterController.Move(jumpDirection * jumpForwardSpeed * Time.deltaTime);
+        }
+    }
+
+    private void HandleFreeFallMovement()
+    {
+        if (!player.isGrounded)
+        {
+            Vector3 freeFallDirection;
+
+            freeFallDirection = PlayerCamera.instance.transform.forward * PlayerInputManager.instance.verticalInput;
+            freeFallDirection += PlayerCamera.instance.transform.right * PlayerInputManager.instance.horizontalInput;
+            freeFallDirection.y = 0;
+
+            player.characterController.Move(freeFallDirection * freeFallSpeed * Time.deltaTime);
+        }
     }
 
     private void HandleRotation()
@@ -172,15 +195,48 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         player.playerNetworkManager.currentStamina.Value -= dodgeStaminaCost;
     }
 
-    public void ApplyGravity()
+    public void AttemptToPerformJump()
     {
-        if (player.characterController.isGrounded)
+        if (player.isPerformingAction)
+            return;
+
+        if (player.playerNetworkManager.currentStamina.Value <= 0)
+            return;
+
+        if (player.isJumping)
+            return;
+
+        if (!player.isGrounded)
+            return;
+
+        player.playerAnimatorManager.PlayTargetActionAnimation("SlimeJumpStart", false, false);
+
+        player.playerNetworkManager.currentStamina.Value -= jumpStaminaCost;
+
+        jumpDirection = PlayerCamera.instance.cameraObject.transform.forward * PlayerInputManager.instance.verticalInput;
+        jumpDirection += PlayerCamera.instance.cameraObject.transform.right * PlayerInputManager.instance.horizontalInput;
+        jumpDirection.y = 0;
+
+        if (jumpDirection != Vector3.zero)
         {
-            verticalVelocity = -2f; // Small value to keep the character grounded
+            if (player.playerNetworkManager.isSprinting.Value)
+            {
+                jumpDirection *= 1.5f;
+            }
+            else if (PlayerInputManager.instance.moveAmount > 0.5)
+            {
+                jumpDirection *= 1f;
+            }
+            else if (PlayerInputManager.instance.moveAmount <= 0.5)
+            {
+                jumpDirection *= 0.5f;
+            }
         }
-        else
-        {
-            verticalVelocity += gravity * Time.deltaTime; // Apply gravity over time
-        }
+    }
+
+    public void ApplyJumpingVelocity()
+    {
+        yVelocity.y = Mathf.Sqrt(jumpHeight * -2 * gravityForce);
+        player.isJumping = true;
     }
 }
