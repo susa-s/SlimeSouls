@@ -94,7 +94,7 @@ public class WorldSaveGameManager : MonoBehaviour
             currentCharacterSlotBeingUsed = CharacterSlot.CharacterSlot_01;
             currentCharacterData = new CharacterSaveData();
 
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
 
@@ -105,7 +105,7 @@ public class WorldSaveGameManager : MonoBehaviour
             currentCharacterSlotBeingUsed = CharacterSlot.CharacterSlot_02;
             currentCharacterData = new CharacterSaveData();
 
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         
@@ -116,11 +116,17 @@ public class WorldSaveGameManager : MonoBehaviour
             currentCharacterSlotBeingUsed = CharacterSlot.CharacterSlot_03;
             currentCharacterData = new CharacterSaveData();
 
-            StartCoroutine(LoadWorldScene());
+            NewGame();
             return;
         }
         
         TitleScreenManager.Instance.DisplayNoFreeCharacterSlotsPopUp();
+    }
+
+    private void NewGame()
+    {
+        SaveGame();
+        StartCoroutine(LoadWorldScene());
     }
 
     public void LoadGame()
