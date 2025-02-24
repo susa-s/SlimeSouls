@@ -4549,6 +4549,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 474078539328257799, guid: ccf4e79732741b647986daf9ede0118b, type: 3}
+      propertyPath: takeDamageEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c42852264e9c41d4494acd441435955e, type: 2}
+    - target: {fileID: 474078539328257799, guid: ccf4e79732741b647986daf9ede0118b, type: 3}
+      propertyPath: instantEffects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 474078539328257799, guid: ccf4e79732741b647986daf9ede0118b, type: 3}
+      propertyPath: 'instantEffects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c42852264e9c41d4494acd441435955e, type: 2}
     - target: {fileID: 3998589522830228410, guid: ccf4e79732741b647986daf9ede0118b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6488824
