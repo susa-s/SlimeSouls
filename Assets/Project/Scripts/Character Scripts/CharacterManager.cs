@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 
 public class CharacterManager : NetworkBehaviour
@@ -11,6 +13,7 @@ public class CharacterManager : NetworkBehaviour
 
     [HideInInspector] public CharacterNetworkManager characterNetworkManager;
     [HideInInspector] public CharacterEffectsManager characterEffectsManager;
+    [HideInInspector] public CharacterAnimatorManager characterAnimatorManager;
 
     [Header("Flags")]
     public bool isPerformingAction = false;
@@ -25,10 +28,10 @@ public class CharacterManager : NetworkBehaviour
         DontDestroyOnLoad(this);
 
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
         characterNetworkManager = GetComponent<CharacterNetworkManager>();
         characterEffectsManager = GetComponent<CharacterEffectsManager>();
-        animator = GetComponent<Animator>();
-
+        characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
     }
 
     protected virtual void Update()
@@ -54,6 +57,27 @@ public class CharacterManager : NetworkBehaviour
     }
 
     protected virtual void LateUpdate()
+    {
+
+    }
+
+    public virtual IEnumerator ProcessDeathEvent(bool manuallySelectDeathAnimation = false)
+    {
+        if (IsOwner)
+        {
+            characterNetworkManager.currentHealth.Value = 0;
+            isDead.Value = true;
+
+            if (!manuallySelectDeathAnimation)
+            {
+                characterAnimatorManager.PlayTargetActionAnimation("Death", true, true);
+            }
+        }
+
+        yield return new WaitForSeconds(5);
+    }
+
+    public virtual void ReviveCharacter()
     {
 
     }
