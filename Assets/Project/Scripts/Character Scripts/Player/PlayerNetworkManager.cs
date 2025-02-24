@@ -8,6 +8,9 @@ public class PlayerNetworkManager : CharacterNetworkManager
 
     public NetworkVariable<FixedString64Bytes> charactername = new NetworkVariable<FixedString64Bytes>("Character", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
+    [Header("Equipment")]
+    public NetworkVariable<int> currentWeaponID = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
     protected override void Awake()
     {
         base.Awake();
@@ -27,5 +30,12 @@ public class PlayerNetworkManager : CharacterNetworkManager
         maxStamina.Value = player.playerStatsManager.CalculateStaminaBasedOnEnduranceLevel(newEndurance);
         PlayerUIManager.instance.playerUIHudManager.SetMaxStaminaValue(maxStamina.Value);
         currentStamina.Value = maxStamina.Value;
+    }
+
+    public void OnCurrentWeaponIDChange(int oldID, int newID)
+    {
+        WeaponItem newWeapon = Instantiate(WorldItemDatabase.Instance.GetWeaponByID(newID));
+        player.playerInventoryManager.currentWeapon = newWeapon;
+        player.playerEquipmentManager.LoadBodyWeapon();
     }
 }

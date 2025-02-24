@@ -12,3 +12,8 @@ public enum CharacterSlot
     CharacterSlot_03,
     NO_SLOT
 }
+
+public enum WeaponModelSlot
+{
+    Body
+}
