@@ -99,7 +99,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 
     private void HandleJumpMovement()
     {
-        if (player.isJumping)
+        if (player.playerNetworkManager.isJumping.Value)
         {
             player.characterController.Move(jumpDirection * jumpForwardSpeed * Time.deltaTime);
         }
@@ -203,13 +203,15 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         if (player.playerNetworkManager.currentStamina.Value <= 0)
             return;
 
-        if (player.isJumping)
+        if (player.playerNetworkManager.isJumping.Value)
             return;
 
         if (!player.isGrounded)
             return;
 
         player.playerAnimatorManager.PlayTargetActionAnimation("SlimeJumpStart", false, false);
+
+        player.playerNetworkManager.isJumping.Value = true;
 
         player.playerNetworkManager.currentStamina.Value -= jumpStaminaCost;
 
@@ -237,6 +239,5 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     public void ApplyJumpingVelocity()
     {
         yVelocity.y = Mathf.Sqrt(jumpHeight * -2 * gravityForce);
-        player.isJumping = true;
     }
 }

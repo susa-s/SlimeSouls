@@ -17,7 +17,6 @@ public class CharacterManager : NetworkBehaviour
 
     [Header("Flags")]
     public bool isPerformingAction = false;
-    public bool isJumping = false;
     public bool isGrounded = true;
     public bool applyRootMotion = false;
     public bool canRotate = true;
@@ -32,6 +31,11 @@ public class CharacterManager : NetworkBehaviour
         characterNetworkManager = GetComponent<CharacterNetworkManager>();
         characterEffectsManager = GetComponent<CharacterEffectsManager>();
         characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
+    }
+
+    protected virtual void Start()
+    {
+        IgnoreMyOwnCOlliders();
     }
 
     protected virtual void Update()
@@ -80,5 +84,28 @@ public class CharacterManager : NetworkBehaviour
     public virtual void ReviveCharacter()
     {
 
+    }
+
+    protected virtual void IgnoreMyOwnCOlliders()
+    {
+        Collider characterControllerCollider = GetComponent<Collider>();
+        Collider[] damageableCharacterColliders = GetComponentsInChildren<Collider>();
+
+        List<Collider> ignoreColliders = new List<Collider>();
+
+        foreach(var collider in damageableCharacterColliders)
+        {
+            ignoreColliders.Add(collider);
+        }
+
+        ignoreColliders.Add(characterControllerCollider);
+
+        foreach(var collider in ignoreColliders)
+        {
+            foreach(var otherCollider in ignoreColliders)
+            {
+                Physics.IgnoreCollision(collider, otherCollider, true);
+            }
+        }
     }
 }

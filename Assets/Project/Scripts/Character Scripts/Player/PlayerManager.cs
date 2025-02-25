@@ -71,6 +71,11 @@ public class PlayerManager : CharacterManager
         playerNetworkManager.currentHealth.OnValueChanged += playerNetworkManager.CheckHP;
 
         playerNetworkManager.currentWeaponID.OnValueChanged += playerNetworkManager.OnCurrentWeaponIDChange;
+
+        if(IsOwner && !IsServer)
+        {
+            LoadGameDataFromCurrentCharacterData(ref WorldSaveGameManager.instance.currentCharacterData);
+        }
     }
 
     public override IEnumerator ProcessDeathEvent(bool manuallySelectDeathAnimation = false)
