@@ -15,10 +15,11 @@ MonoBehaviour:
   itemName: Straight Sword
   itemIcon: {fileID: 0}
   itemDescription: A Sword. Mayhaps will contain lore.
-  itemID: 0
+  itemID: 1
   weaponModel: {fileID: 1431098292290490072, guid: 821ed8993eb732f419340899a4e89636, type: 3}
   strengthREQ: 1
   physicalDamage: 10
   magicDamage: 0
   poiseDamage: 10
   baseStaminaCost: 20
+  rbAction: {fileID: 11400000, guid: 6cc3882866fac0d4da8202f07460e7a0, type: 2}

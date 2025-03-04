@@ -24,6 +24,7 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool dodgeInput = false;
     [SerializeField] bool sprintInput = false;
     [SerializeField] bool jumpInput = false;
+    [SerializeField] bool rbInput = false;
 
 
     private void Awake()
@@ -83,7 +84,8 @@ public class PlayerInputManager : MonoBehaviour
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerCamera.Movement.performed += i => cameraInput = i.ReadValue<Vector2>();
             playerControls.PlayerActions.Dodge.performed += i => dodgeInput = true;
-            playerControls.PlayerActions.Jump.performed += i =>jumpInput = true;
+            playerControls.PlayerActions.Jump.performed += i => jumpInput = true;
+            playerControls.PlayerActions.RB.performed += i => rbInput = true;
 
             playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
             playerControls.PlayerActions.Sprint.canceled += i => sprintInput = false;
@@ -124,6 +126,7 @@ public class PlayerInputManager : MonoBehaviour
         HandleDodgeInput();
         HandleSprintInput();
         HandleJumpInput();
+        HandleRBInput();
     }
 
     private void HandlePlayerMovementInput()
@@ -183,6 +186,16 @@ public class PlayerInputManager : MonoBehaviour
             jumpInput = false;
 
             player.playerLocomotionManager.AttemptToPerformJump();
+        }
+    }
+
+    private void HandleRBInput()
+    {
+        if (rbInput)
+        {
+            rbInput = false;
+
+            player.playerCombatManager.PerformWeaponBasedAction(player.playerInventoryManager.currentWeapon.rbAction, player.playerInventoryManager.currentWeapon);
         }
     }
 }

@@ -18,5 +18,6 @@ public class WeaponItem : Item
     [Header("Stamina Costs")]
     public int baseStaminaCost = 20;
 
-    
+    [Header("Actions")]
+    public WeaponItemAction rbAction;
 }
