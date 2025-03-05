@@ -185,11 +185,11 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             Quaternion playerRotation = Quaternion.LookRotation(rollDirection);
             player.transform.rotation = playerRotation;
 
-            player.playerAnimatorManager.PlayTargetActionAnimation("SlimeDodge", true, true);
+            player.playerAnimatorManager.PlayTargetActionAnimation("SlimeDodge", true);
         }
         else
         {
-            player.playerAnimatorManager.PlayTargetActionAnimation("SlimeBackstep", true, true);
+            player.playerAnimatorManager.PlayTargetActionAnimation("SlimeBackstep", true);
         }
 
         player.playerNetworkManager.currentStamina.Value -= dodgeStaminaCost;
@@ -209,7 +209,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         if (!player.isGrounded)
             return;
 
-        player.playerAnimatorManager.PlayTargetActionAnimation("SlimeJumpStart", false, false);
+        player.playerAnimatorManager.PlayTargetActionAnimation("SlimeJumpStart", false);
 
         player.playerNetworkManager.isJumping.Value = true;
 
