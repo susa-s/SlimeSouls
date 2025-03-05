@@ -189,7 +189,8 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         }
         else
         {
-            player.playerAnimatorManager.PlayTargetActionAnimation("SlimeBackstep", true);
+            player.playerAnimatorManager.PlayTargetActionAnimation("SlimeDodge", true);
+            //player.playerAnimatorManager.PlayTargetActionAnimation("SlimeBackstep", true);
         }
 
         player.playerNetworkManager.currentStamina.Value -= dodgeStaminaCost;

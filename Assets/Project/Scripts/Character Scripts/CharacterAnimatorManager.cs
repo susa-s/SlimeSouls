@@ -48,7 +48,7 @@ public class CharacterAnimatorManager : MonoBehaviour
     public virtual void PlayTargetAttackAnimation(
         string targetAnimation,
         bool isPerformingAction,
-        bool applyRootMotion,
+        bool applyRootMotion = true,
         bool canRotate = false,
         bool canMove = false)
     {
