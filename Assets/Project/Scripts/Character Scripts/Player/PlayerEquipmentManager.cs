@@ -115,4 +115,16 @@ public class PlayerEquipmentManager : CharacterEquipmentManager
             SwitchWeapon();
         }
     }
+
+    public void OpenDamageCollider()
+    {
+        weaponManager.meleeDamageCollider.EnableDamageCollider();
+
+        // play sfx
+    }
+
+    public void CloseDamageCollider()
+    {
+        weaponManager.meleeDamageCollider.DisableDamageCollider();
+    }
 }

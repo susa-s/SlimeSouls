@@ -17,3 +17,8 @@ public enum WeaponModelSlot
 {
     Body
 }
+
+public enum AttackType
+{
+    LightAttack01
+}

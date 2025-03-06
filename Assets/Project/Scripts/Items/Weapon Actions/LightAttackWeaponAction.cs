@@ -23,6 +23,6 @@ public class LightAttackWeaponAction : WeaponItemAction
 
     private void PerformLightAttack(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
     {
-        playerPerformingAction.playerAnimatorManager.PlayTargetAttackAnimation(Light_Attack_01, true, false);
+        playerPerformingAction.playerAnimatorManager.PlayTargetAttackAnimation(AttackType.LightAttack01 ,Light_Attack_01, true, false);
     }
 }

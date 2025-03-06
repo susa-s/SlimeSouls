@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class DamageCollider : MonoBehaviour
 {
     [Header("Collider")]
-    protected Collider damageCollider;
+    [SerializeField] protected Collider damageCollider;
 
     [Header("Damage")]
     public float physicalDamage = 0;
@@ -17,7 +17,12 @@ public class DamageCollider : MonoBehaviour
     [Header("Characters Damaged")]
     protected List<CharacterManager> charactersDamaged = new List<CharacterManager>();
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void Awake()
+    {
+
+    }
+
+    protected virtual void OnTriggerEnter(Collider other)
     {
         CharacterManager damageTarget = other.GetComponentInParent<CharacterManager>();
 
