@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Unity.Netcode;
 
 public class PlayerManager : CharacterManager
 {
@@ -55,6 +56,7 @@ public class PlayerManager : CharacterManager
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
 
         if (IsOwner)
         {
@@ -75,9 +77,17 @@ public class PlayerManager : CharacterManager
         playerNetworkManager.currentWeaponID.OnValueChanged += playerNetworkManager.OnCurrentWeaponIDChange;
         playerNetworkManager.currentWeaponBeingUsed.OnValueChanged += playerNetworkManager.OnCurrentWeaponBeingUsedIDChange;
 
-        if(IsOwner && !IsServer)
+        if (IsOwner && !IsServer)
         {
             LoadGameDataFromCurrentCharacterData(ref WorldSaveGameManager.instance.currentCharacterData);
+        }
+    }
+
+    private void OnClientConnectedCallback(ulong clientID)
+    {
+        if(!IsServer && IsOwner)
+        {
+
         }
     }
 
@@ -119,6 +129,11 @@ public class PlayerManager : CharacterManager
         playerNetworkManager.currentHealth.Value = currentCharacterData.currentHealth;
         playerNetworkManager.currentStamina.Value = currentCharacterData.currentStamina;
         PlayerUIManager.instance.playerUIHudManager.SetMaxStaminaValue(playerNetworkManager.maxStamina.Value);
+    }
+
+    private void LoadOtherPlayerCharacterWhenJoiningServer(PlayerManager otherPlayer)
+    {
+        otherPlayer.playerNetworkManager.OnCurrentWeaponIDChange(0, otherPlayer.playerNetworkManager.currentWeaponID.Value);
     }
 
     public override void ReviveCharacter()

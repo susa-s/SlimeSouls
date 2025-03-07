@@ -21,4 +21,7 @@ MonoBehaviour:
   physicalDamage: 5
   magicDamage: 0
   poiseDamage: 10
+  light_attack_01_Modifier: 1.1
   baseStaminaCost: 5
+  lightAttackStaminaCostMultiplier: 0.9
+  rbAction: {fileID: 11400000, guid: 6cc3882866fac0d4da8202f07460e7a0, type: 2}

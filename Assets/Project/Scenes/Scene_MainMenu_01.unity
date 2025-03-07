@@ -1498,6 +1498,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834815778}
   m_CullTransparentMesh: 1
+--- !u!1 &866337299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1997000480913450935, guid: 3cb9276218081dc4e84770f960677a32, type: 3}
+  m_PrefabInstance: {fileID: 1782880642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &866337303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866337299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbb40a6826607d4e8adc8228b1d8085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
 --- !u!1 &884112690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,7 +2337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2595822137544975283, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 2669481825096646493, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
       propertyPath: m_RendererIndex
@@ -3410,7 +3428,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1997000480913450935, guid: 3cb9276218081dc4e84770f960677a32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 866337303}
   m_SourcePrefab: {fileID: 100100000, guid: 3cb9276218081dc4e84770f960677a32, type: 3}
 --- !u!1 &1843360557
 GameObject:
@@ -4642,6 +4663,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 474078539328257799, guid: ccf4e79732741b647986daf9ede0118b, type: 3}
+      propertyPath: bloodSplatterVFX
+      value: 
+      objectReference: {fileID: 3548588485384254792, guid: 27ab99b547f88964296bb8ca5848d23f, type: 3}
     - target: {fileID: 474078539328257799, guid: ccf4e79732741b647986daf9ede0118b, type: 3}
       propertyPath: takeDamageEffect
       value: 

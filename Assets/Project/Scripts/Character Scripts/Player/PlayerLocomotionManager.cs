@@ -241,4 +241,9 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     {
         yVelocity.y = Mathf.Sqrt(jumpHeight * -2 * gravityForce);
     }
+
+    public void SetPlayerCanMoveTrue()
+    {
+        player.canMove = true;
+    }
 }

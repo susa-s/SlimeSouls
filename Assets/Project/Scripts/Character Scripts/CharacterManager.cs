@@ -47,7 +47,6 @@ public class CharacterManager : NetworkBehaviour
         {
             characterNetworkManager.networkPosition.Value = transform.position;
             characterNetworkManager.networkRotation.Value = transform.rotation;
-            //characterNetworkManager.networkScale.Value = transform.localScale;
         }
         else
         {
@@ -60,10 +59,6 @@ public class CharacterManager : NetworkBehaviour
                 (transform.rotation, 
                 characterNetworkManager.networkRotation.Value, 
                 characterNetworkManager.networkRotationSmoothTime);
-            /*transform.localScale = Vector3.Lerp(
-                transform.localScale,
-                characterNetworkManager.networkScale.Value,
-                Time.deltaTime * 10f); */
         }
     }
 
