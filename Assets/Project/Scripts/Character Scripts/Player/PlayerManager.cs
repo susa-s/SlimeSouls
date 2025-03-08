@@ -85,9 +85,17 @@ public class PlayerManager : CharacterManager
 
     private void OnClientConnectedCallback(ulong clientID)
     {
+        WorldGameSessionManager.instance.AddPlayerToActivePlayerList(this);
+
         if(!IsServer && IsOwner)
         {
-
+            foreach(var player in WorldGameSessionManager.instance.players)
+            {
+                if(player != this)
+                {
+                    player.LoadOtherPlayerCharacterWhenJoiningServer();
+                }
+            }
         }
     }
 
@@ -131,9 +139,9 @@ public class PlayerManager : CharacterManager
         PlayerUIManager.instance.playerUIHudManager.SetMaxStaminaValue(playerNetworkManager.maxStamina.Value);
     }
 
-    private void LoadOtherPlayerCharacterWhenJoiningServer(PlayerManager otherPlayer)
+    public void LoadOtherPlayerCharacterWhenJoiningServer()
     {
-        otherPlayer.playerNetworkManager.OnCurrentWeaponIDChange(0, otherPlayer.playerNetworkManager.currentWeaponID.Value);
+        playerNetworkManager.OnCurrentWeaponIDChange(0, playerNetworkManager.currentWeaponID.Value);
     }
 
     public override void ReviveCharacter()

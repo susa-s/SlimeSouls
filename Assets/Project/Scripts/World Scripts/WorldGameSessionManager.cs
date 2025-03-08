@@ -3,8 +3,22 @@ using System.Collections.Generic;
 
 public class WorldGameSessionManager : MonoBehaviour
 {
+    public static WorldGameSessionManager instance;
+
     [Header("Active Players In Session")]
     public List<PlayerManager> players = new List<PlayerManager>();
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void AddPlayerToActivePlayerList(PlayerManager player)
     {

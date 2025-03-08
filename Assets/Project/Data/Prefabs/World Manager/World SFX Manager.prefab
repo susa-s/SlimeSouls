@@ -45,3 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollSFX: {fileID: 8300000, guid: dcf6d5760a922a6499b12f49242d619a, type: 3}
+  physicalDamageSFX:
+  - {fileID: 8300000, guid: 2caad062d5868f644b1e65848fe1ad80, type: 3}
+  - {fileID: 8300000, guid: 4d482136e62d11d448e46f3c857f9576, type: 3}
+  - {fileID: 8300000, guid: 17cb9468c34c8424d9d7fb9e05d0d005, type: 3}

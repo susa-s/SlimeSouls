@@ -39,6 +39,7 @@ public class TakeDamageEffect : InstantCharacterEffect
             return;
 
         CalculateDamage(character);
+        PlayDamageSFX(character);
         PlayDamageVFX(character);
     }
 
@@ -65,5 +66,12 @@ public class TakeDamageEffect : InstantCharacterEffect
     private void PlayDamageVFX(CharacterManager character)
     {
         character.characterEffectsManager.PlayBloodSplatterVFX(contactPoint);
+    }
+
+    private void PlayDamageSFX(CharacterManager character)
+    {
+        AudioClip physicalDamageSFX = WorldSFXManager.instance.ChooseRandomSFXFromArray(WorldSFXManager.instance.physicalDamageSFX);
+
+        character.characterSFXManager.PlaySFX(physicalDamageSFX);
     }
 }

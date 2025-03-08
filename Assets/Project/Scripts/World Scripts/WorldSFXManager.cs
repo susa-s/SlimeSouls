@@ -6,7 +6,9 @@ public class WorldSFXManager : MonoBehaviour
 
     [Header("ActionSounds")]
     public AudioClip rollSFX;
-    public AudioClip backstepSFX;
+
+    [Header("Damage Sounds")]
+    public AudioClip[] physicalDamageSFX;
 
     private void Awake()
     {
@@ -23,5 +25,12 @@ public class WorldSFXManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    public AudioClip ChooseRandomSFXFromArray(AudioClip[] array)
+    {
+        int index = Random.Range(0, array.Length);
+
+        return array[index];
     }
 }
