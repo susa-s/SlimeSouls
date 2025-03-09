@@ -39,6 +39,7 @@ public class TakeDamageEffect : InstantCharacterEffect
             return;
 
         CalculateDamage(character);
+        PLayDirectionalBasedDamageAnimation(character);
         PlayDamageSFX(character);
         PlayDamageVFX(character);
     }
@@ -73,5 +74,39 @@ public class TakeDamageEffect : InstantCharacterEffect
         AudioClip physicalDamageSFX = WorldSFXManager.instance.ChooseRandomSFXFromArray(WorldSFXManager.instance.physicalDamageSFX);
 
         character.characterSFXManager.PlaySFX(physicalDamageSFX);
+    }
+
+    private void PLayDirectionalBasedDamageAnimation(CharacterManager character)
+    {
+        if (!character.IsOwner)
+            return;
+
+        poiseIsBroken = true;
+
+        if (angleHitFrom >= 145 && angleHitFrom <= 180)
+        {
+            damageAnimation = character.characterAnimatorManager.hit_Backward_01;
+        }
+        else if (angleHitFrom <= -145 && angleHitFrom >= -180)
+        {
+            damageAnimation = character.characterAnimatorManager.hit_Backward_01;
+        }
+        else if (angleHitFrom >= -45 && angleHitFrom <= 45)
+        {
+            damageAnimation = character.characterAnimatorManager.hit_Forward_01;
+        }
+        else if (angleHitFrom >= -144 && angleHitFrom <= -45)
+        {
+            damageAnimation = character.characterAnimatorManager.hit_Right_01;
+        }
+        else if (angleHitFrom >= 45 && angleHitFrom <= 144)
+        {
+            damageAnimation = character.characterAnimatorManager.hit_Left_01;
+        }
+
+        if (poiseIsBroken)
+        {
+            character.characterAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
+        }
     }
 }

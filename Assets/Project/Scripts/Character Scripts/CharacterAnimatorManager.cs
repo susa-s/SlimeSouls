@@ -8,6 +8,12 @@ public class CharacterAnimatorManager : MonoBehaviour
     int vertical;
     int horizontal;
 
+    [Header("Damage Animations")]
+    public string hit_Forward_01 = "SlimeHitForward";
+    public string hit_Backward_01 = "SlimeHitBackward";
+    public string hit_Left_01 = "SlimeHitLeft";
+    public string hit_Right_01 = "SlimeHitRight";
+
     protected virtual void Awake()
     {
         character = GetComponent<CharacterManager>();
@@ -36,6 +42,7 @@ public class CharacterAnimatorManager : MonoBehaviour
         bool canRotate = false, 
         bool canMove = false)
     {
+        Debug.Log("Playing Animation: " + targetAnimation);
         character.applyRootMotion = applyRootMotion;
         character.animator.CrossFade(targetAnimation, 0.2f);
         character.isPerformingAction = isPerformingAction;
