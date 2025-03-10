@@ -246,4 +246,9 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     {
         player.canMove = true;
     }
+
+    public void SetPlayerCanRotateTrue()
+    {
+        player.canRotate = true;
+    }
 }

@@ -24,8 +24,13 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool dodgeInput = false;
     [SerializeField] bool sprintInput = false;
     [SerializeField] bool jumpInput = false;
+
+    [Header("BUMPER INPUTS")]
     [SerializeField] bool rbInput = false;
 
+    [Header("TRIGGER INPUTS")]
+    [SerializeField] bool rtInput = false;
+    [SerializeField] bool hold_rtInput = false;
 
     private void Awake()
     {
@@ -85,7 +90,12 @@ public class PlayerInputManager : MonoBehaviour
             playerControls.PlayerCamera.Movement.performed += i => cameraInput = i.ReadValue<Vector2>();
             playerControls.PlayerActions.Dodge.performed += i => dodgeInput = true;
             playerControls.PlayerActions.Jump.performed += i => jumpInput = true;
+
             playerControls.PlayerActions.RB.performed += i => rbInput = true;
+
+            playerControls.PlayerActions.RT.performed += i => rtInput = true;
+            playerControls.PlayerActions.ChargeRT.performed += i => hold_rtInput = true;
+            playerControls.PlayerActions.ChargeRT.canceled += i => hold_rtInput = false;
 
             playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
             playerControls.PlayerActions.Sprint.canceled += i => sprintInput = false;
@@ -127,6 +137,8 @@ public class PlayerInputManager : MonoBehaviour
         HandleSprintInput();
         HandleJumpInput();
         HandleRBInput();
+        HandleRTInput();
+        HandleChargeRTInput();
     }
 
     private void HandlePlayerMovementInput()
@@ -196,6 +208,24 @@ public class PlayerInputManager : MonoBehaviour
             rbInput = false;
 
             player.playerCombatManager.PerformWeaponBasedAction(player.playerInventoryManager.currentWeapon.rbAction, player.playerInventoryManager.currentWeapon);
+        }
+    }
+
+    private void HandleRTInput()
+    {
+        if (rtInput)
+        {
+            rtInput = false;
+
+            player.playerCombatManager.PerformWeaponBasedAction(player.playerInventoryManager.currentWeapon.rtAction, player.playerInventoryManager.currentWeapon);
+        }
+    }
+
+    private void HandleChargeRTInput()
+    {
+        if (player.isPerformingAction)
+        {
+            player.playerNetworkManager.isChargingAttack.Value = hold_rtInput;
         }
     }
 }

@@ -16,7 +16,10 @@ public class WeaponItem : Item
     public float poiseDamage = 10;
 
     [Header("Attack Modifiers")]
+    [Header("Attack Modifiers")]
     public float light_attack_01_Modifier = 1.1f;
+    public float heavy_attack_01_Modifier = 1.4f;
+    public float charged_attack_01_Modifier = 2.0f;
 
     [Header("Stamina Cost Modifiers")]
     public int baseStaminaCost = 20;
@@ -24,4 +27,5 @@ public class WeaponItem : Item
 
     [Header("Actions")]
     public WeaponItemAction rbAction;
+    public WeaponItemAction rtAction;
 }
