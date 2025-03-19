@@ -38,6 +38,11 @@ public class PlayerNetworkManager : CharacterNetworkManager
         WeaponItem newWeapon = Instantiate(WorldItemDatabase.Instance.GetWeaponByID(newID));
         player.playerInventoryManager.currentWeapon = newWeapon;
         player.playerEquipmentManager.LoadBodyWeapon();
+
+        if (player.IsOwner)
+        {
+            PlayerUIManager.instance.playerUIHudManager.SetWeaponQuickSlotIcon(newID);
+        }
     }
 
     public void OnCurrentWeaponBeingUsedIDChange(int oldID, int newID)

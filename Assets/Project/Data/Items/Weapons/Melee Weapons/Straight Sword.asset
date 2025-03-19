@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Straight Sword
   m_EditorClassIdentifier: 
   itemName: Straight Sword
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 7c2a280ed3e0c494ba9beafed8b94a58, type: 3}
   itemDescription: A Sword. Mayhaps will contain lore.
   itemID: 1
   weaponModel: {fileID: 1431098292290490072, guid: 821ed8993eb732f419340899a4e89636, type: 3}
@@ -22,6 +22,8 @@ MonoBehaviour:
   magicDamage: 0
   poiseDamage: 10
   light_attack_01_Modifier: 1.1
+  heavy_attack_01_Modifier: 1.4
+  charged_attack_01_Modifier: 2
   baseStaminaCost: 20
   lightAttackStaminaCostMultiplier: 0.9
   rbAction: {fileID: 11400000, guid: 6cc3882866fac0d4da8202f07460e7a0, type: 2}

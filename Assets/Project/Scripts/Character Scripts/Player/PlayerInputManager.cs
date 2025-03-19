@@ -24,6 +24,7 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool dodgeInput = false;
     [SerializeField] bool sprintInput = false;
     [SerializeField] bool jumpInput = false;
+    [SerializeField] bool switchWeaponInput = false;
 
     [Header("BUMPER INPUTS")]
     [SerializeField] bool rbInput = false;
@@ -88,8 +89,10 @@ public class PlayerInputManager : MonoBehaviour
 
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerCamera.Movement.performed += i => cameraInput = i.ReadValue<Vector2>();
+
             playerControls.PlayerActions.Dodge.performed += i => dodgeInput = true;
             playerControls.PlayerActions.Jump.performed += i => jumpInput = true;
+            playerControls.PlayerActions.SwichWeapon.performed += i => switchWeaponInput = true;
 
             playerControls.PlayerActions.RB.performed += i => rbInput = true;
 
@@ -139,6 +142,7 @@ public class PlayerInputManager : MonoBehaviour
         HandleRBInput();
         HandleRTInput();
         HandleChargeRTInput();
+        HandleSwitchWeaponInput();
     }
 
     private void HandlePlayerMovementInput()
@@ -226,6 +230,15 @@ public class PlayerInputManager : MonoBehaviour
         if (player.isPerformingAction)
         {
             player.playerNetworkManager.isChargingAttack.Value = hold_rtInput;
+        }
+    }
+
+    private void HandleSwitchWeaponInput()
+    {
+        if (switchWeaponInput)
+        {
+            switchWeaponInput = false;
+            player.playerEquipmentManager.SwitchWeapon();
         }
     }
 }

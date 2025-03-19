@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.IO;
+using UnityEditor.Overlays;
 
 public class SaveFileDataWriter
 {
@@ -72,7 +73,7 @@ public class SaveFileDataWriter
             }
             catch(Exception ex)
             {
-
+                Debug.LogError("ERROR WHILE TRYING TO LOAD CHARACTER DATA" + "\n" + ex);
             }
         }
 
