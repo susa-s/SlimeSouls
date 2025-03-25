@@ -1234,6 +1234,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339030772}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &339757285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339757287}
+  - component: {fileID: 339757286}
+  m_Layer: 0
+  m_Name: World AI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &339757286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339757285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5543ddd5e799e4fabf10fe9bbe9493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiCharacters:
+  - {fileID: 6190084127861701539, guid: dc79126dc15ca0e4e8e922ac5dbf7f21, type: 3}
+  - {fileID: 6190084127861701539, guid: afabdebd9d14c7d4c843554ed95159bc, type: 3}
+  spawnedInCharacters: []
+--- !u!4 &339757287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339757285}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6175098, y: 3.482607, z: -4.4025145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &398462970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,6 +5436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ca3a32ebf0c574f82b2acd8a8ce5c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageCollider: {fileID: 0}
   physicalDamage: 10
   magicDamage: 0
 --- !u!65 &1730313603
@@ -7276,3 +7325,4 @@ SceneRoots:
   - {fileID: 281952519}
   - {fileID: 1974015627}
   - {fileID: 1730313606}
+  - {fileID: 339757287}

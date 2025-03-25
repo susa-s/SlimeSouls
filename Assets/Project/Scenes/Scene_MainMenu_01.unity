@@ -4778,7 +4778,7 @@ PrefabInstance:
     - target: {fileID: 474078539328257799, guid: ccf4e79732741b647986daf9ede0118b, type: 3}
       propertyPath: bloodSplatterVFX
       value: 
-      objectReference: {fileID: 3548588485384254792, guid: 27ab99b547f88964296bb8ca5848d23f, type: 3}
+      objectReference: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
     - target: {fileID: 474078539328257799, guid: ccf4e79732741b647986daf9ede0118b, type: 3}
       propertyPath: takeDamageEffect
       value: 

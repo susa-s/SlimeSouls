@@ -64,6 +64,11 @@ public class CharacterManager : NetworkBehaviour
         }
     }
 
+    protected virtual void FixedUpdate()
+    {
+
+    }
+
     protected virtual void LateUpdate()
     {
 
