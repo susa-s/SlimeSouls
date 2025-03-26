@@ -265,6 +265,8 @@ public class PlayerInputManager : MonoBehaviour
         if (lockOnInput && player.playerNetworkManager.islockedOn.Value)
         {
             lockOnInput = false;
+            PlayerCamera.instance.ClearLockOnTargets();
+            player.playerNetworkManager.islockedOn.Value = false;
 
             return;
         }
@@ -273,7 +275,12 @@ public class PlayerInputManager : MonoBehaviour
         {
             lockOnInput = false;
             PlayerCamera.instance.HandleLocatingLockOnTarget();
-            return;
+            
+            if(PlayerCamera.instance.nearestLockOnTarget != null)
+            {
+                player.playerCombatManager.SetTarget(PlayerCamera.instance.nearestLockOnTarget);
+                player.playerNetworkManager.islockedOn.Value = true;
+            }
         }
     }
 }

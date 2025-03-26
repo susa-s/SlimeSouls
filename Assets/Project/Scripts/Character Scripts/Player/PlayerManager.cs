@@ -72,6 +72,9 @@ public class PlayerManager : CharacterManager
             playerNetworkManager.currentStamina.OnValueChanged += playerStatsManager.ResetStaminaRegenTimer;
         }
 
+        playerNetworkManager.islockedOn.OnValueChanged += playerNetworkManager.OnIsLockOnChanged;
+        playerNetworkManager.currentTargetNetworkObjectID.OnValueChanged += playerNetworkManager.OnLockOnTargetIDChange;
+
         playerNetworkManager.currentHealth.OnValueChanged += playerNetworkManager.CheckHP;
 
         playerNetworkManager.currentWeaponID.OnValueChanged += playerNetworkManager.OnCurrentWeaponIDChange;
@@ -167,6 +170,11 @@ public class PlayerManager : CharacterManager
     public void LoadOtherPlayerCharacterWhenJoiningServer()
     {
         playerNetworkManager.OnCurrentWeaponIDChange(0, playerNetworkManager.currentWeaponID.Value);
+
+        if (playerNetworkManager.islockedOn.Value)
+        {
+            playerNetworkManager.OnLockOnTargetIDChange(0, playerNetworkManager.currentTargetNetworkObjectID.Value);
+        }
     }
 
     public override void ReviveCharacter()
@@ -175,6 +183,7 @@ public class PlayerManager : CharacterManager
 
         if (IsOwner)
         {
+            isDead.Value = false;
             playerNetworkManager.currentHealth.Value = playerNetworkManager.maxHealth.Value;
             playerNetworkManager.currentStamina.Value = playerNetworkManager.maxHealth.Value;
 
