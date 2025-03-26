@@ -24,6 +24,12 @@ public class PlayerCamera : MonoBehaviour
     private float cameraZPosition;
     private float targetCameraZPosition;
 
+    [Header("Lock On")]
+    [SerializeField] float lockOnRadius = 20;
+    [SerializeField] float minimumViewableAngle = -50;
+    [SerializeField] float maximumViewableAngle = 50;
+    [SerializeField] float maximumLockOnDistance = 20;
+
     private void Awake()
     {
         if(instance == null)
@@ -96,5 +102,49 @@ public class PlayerCamera : MonoBehaviour
 
         cameraObjectPosition.z = Mathf.Lerp(cameraObject.transform.localPosition.z, targetCameraZPosition, cameraCollisionRadius);
         cameraObject.transform.localPosition = cameraObjectPosition;
+    }
+
+    public void HandleLocatingLockOnTarget()
+    {
+        float shortestDistance = Mathf.Infinity;
+        float shortestDistanceOfRightTarget = Mathf.Infinity;
+        float shortestDistanceOfLeftTarget = -Mathf.Infinity;
+
+        Collider[] colliders = Physics.OverlapSphere(player.transform.position, lockOnRadius, WorldUtilityManager.Instance.GetCharacterLayers());
+
+        for(int i = 0; i < colliders.Length; i++)
+        {
+            CharacterManager lockOnTarget = colliders[i].GetComponent<CharacterManager>();
+
+            if (lockOnTarget != null)
+            {
+                Vector3 lockOnTargetsDirection = lockOnTarget.transform.position - player.transform.position;
+                float distanceFromTarget = Vector3.Distance(player.transform.position, lockOnTarget.transform.position);
+                float viewableAngle = Vector3.Angle(lockOnTargetsDirection, cameraObject.transform.forward);
+
+                if (lockOnTarget.isDead.Value)
+                    continue;
+
+                if (lockOnTarget.transform.root == player.transform.root)
+                    continue;
+
+                if (distanceFromTarget > maximumLockOnDistance)
+                    continue;
+
+                if(viewableAngle > minimumViewableAngle && viewableAngle < maximumViewableAngle)
+                {
+                    RaycastHit hit;
+
+                    if(Physics.Linecast(player.playerCombatManager.lockOnTransform.position, lockOnTarget.characterCombatManager.lockOnTransform.position, out hit, WorldUtilityManager.Instance.GetEnvironhmentLayers()))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Debug.Log("Yippie");
+                    }
+                }
+            }
+        }
     }
 }

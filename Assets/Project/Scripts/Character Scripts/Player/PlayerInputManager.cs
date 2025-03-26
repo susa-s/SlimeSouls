@@ -33,6 +33,9 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool rtInput = false;
     [SerializeField] bool hold_rtInput = false;
 
+    [Header("LOCK ON INPUT")]
+    [SerializeField] bool lockOnInput = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -102,6 +105,8 @@ public class PlayerInputManager : MonoBehaviour
 
             playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
             playerControls.PlayerActions.Sprint.canceled += i => sprintInput = false;
+
+            playerControls.PlayerActions.LockOn.performed += i => lockOnInput = true;
         }
 
         playerControls.Enable();
@@ -143,6 +148,7 @@ public class PlayerInputManager : MonoBehaviour
         HandleRTInput();
         HandleChargeRTInput();
         HandleSwitchWeaponInput();
+        HandleLockOnInput();
     }
 
     private void HandlePlayerMovementInput()
@@ -239,6 +245,35 @@ public class PlayerInputManager : MonoBehaviour
         {
             switchWeaponInput = false;
             player.playerEquipmentManager.SwitchWeapon();
+        }
+    }
+
+    private void HandleLockOnInput()
+    {
+        if (player.playerNetworkManager.islockedOn.Value)
+        {
+            if (player.playerCombatManager.currentTarget == null)
+                return;
+
+            if (player.playerCombatManager.currentTarget.isDead.Value)
+            {
+                player.playerNetworkManager.islockedOn.Value = false;
+            }
+
+        }
+
+        if (lockOnInput && player.playerNetworkManager.islockedOn.Value)
+        {
+            lockOnInput = false;
+
+            return;
+        }
+
+        if (lockOnInput && !player.playerNetworkManager.islockedOn.Value)
+        {
+            lockOnInput = false;
+            PlayerCamera.instance.HandleLocatingLockOnTarget();
+            return;
         }
     }
 }

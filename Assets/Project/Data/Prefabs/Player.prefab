@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5179567829271683943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6741848793268206886}
+  m_Layer: 6
+  m_Name: Lock On Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6741848793268206886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179567829271683943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6821906817842061593}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5487890346202918274
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +324,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5963181979683150312}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6741848793268206886}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
       insertIndex: -1
@@ -430,6 +464,8 @@ MonoBehaviour:
   isJumping:
     m_InternalValue: 0
   isChargingAttack:
+    m_InternalValue: 0
+  islockedOn:
     m_InternalValue: 0
   vitality:
     m_InternalValue: 1
@@ -675,7 +711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1831d93058ddf7647b85c4e9e96fc6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
   currentAttackType: 0
+  lockOnTransform: {fileID: 6741848793268206886}
   currentWeaponBeingUsed: {fileID: 0}
 --- !u!114 &8967741625121902652
 MonoBehaviour:

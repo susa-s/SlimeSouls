@@ -1263,9 +1263,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5543ddd5e799e4fabf10fe9bbe9493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawnCharacters: 0
+  respawnCharacters: 0
   aiCharacters:
   - {fileID: 6190084127861701539, guid: dc79126dc15ca0e4e8e922ac5dbf7f21, type: 3}
-  - {fileID: 6190084127861701539, guid: afabdebd9d14c7d4c843554ed95159bc, type: 3}
   spawnedInCharacters: []
 --- !u!4 &339757287
 Transform:
