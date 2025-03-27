@@ -210,7 +210,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         if (!player.isGrounded)
             return;
 
-        player.playerAnimatorManager.PlayTargetActionAnimation("SlimeJumpStart", false);
+        player.playerAnimatorManager.PlayTargetActionAnimation("SlimeJumpStart", false, false);
 
         player.playerNetworkManager.isJumping.Value = true;
 

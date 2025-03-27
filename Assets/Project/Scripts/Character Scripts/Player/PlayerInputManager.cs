@@ -170,6 +170,15 @@ public class PlayerInputManager : MonoBehaviour
         if (player == null)
             return;
 
+        if(moveAmount != 0)
+        {
+            player.playerNetworkManager.isMoving.Value = true;
+        }
+        else
+        {
+            player.playerNetworkManager.isMoving.Value = false;
+        }
+
         player.playerAnimatorManager.UpdateAnimatorMovementParameters(0, moveAmount, player.playerNetworkManager.isSprinting.Value);
     }
 
