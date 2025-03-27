@@ -427,12 +427,12 @@ GameObject:
   - component: {fileID: 8717954900259631297}
   - component: {fileID: 4208182211996192209}
   - component: {fileID: 1436484634718948974}
-  - component: {fileID: 1183900430142947570}
   - component: {fileID: 4955305807001597736}
   - component: {fileID: 8810380673921967170}
   - component: {fileID: -8941001061968268826}
   - component: {fileID: 6556621064292227442}
   - component: {fileID: -2165534084149050265}
+  - component: {fileID: -8522125662576354713}
   m_Layer: 6
   m_Name: Dummy_01
   m_TagString: Untagged
@@ -507,12 +507,14 @@ MonoBehaviour:
   characterAnimatorManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
   characterSFXManager: {fileID: 0}
+  charactergroup: 1
   isPerformingAction: 0
   isGrounded: 1
   applyRootMotion: 0
   canRotate: 1
   canMove: 1
-  currentState: {fileID: 0}
+  aiCharacterCombatManager: {fileID: 0}
+  currentState: {fileID: 11400000, guid: a19cda83a5be9c242b130eaf8b4b513d, type: 2}
 --- !u!114 &6997646722374590599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,6 +540,8 @@ MonoBehaviour:
   verticalMovement:
     m_InternalValue: 0
   moveAmount:
+    m_InternalValue: 0
+  currentTargetNetworkObjectID:
     m_InternalValue: 0
   isSprinting:
     m_InternalValue: 0
@@ -646,21 +650,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodSplatterVFX: {fileID: 0}
---- !u!114 &1183900430142947570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190084127861701539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99667ec5e7cc7984ea88f73f0b088227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTarget: {fileID: 0}
-  currentAttackType: 0
-  lockOnTransform: {fileID: 6621052923006365143}
 --- !u!114 &4955305807001597736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,3 +833,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8522125662576354713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190084127861701539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9425a8b4a23424f923f46137413a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  currentTarget: {fileID: 0}
+  currentAttackType: 0
+  lockOnTransform: {fileID: 6621052923006365143}
+  detectionRadius: 15
+  minimumViewableAngle: -35
+  maximumViewableAngle: 35

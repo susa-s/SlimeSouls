@@ -3,7 +3,7 @@ using Unity.Netcode;
 
 public class CharacterCombatManager : NetworkBehaviour
 {
-    CharacterManager character;
+    protected CharacterManager character;
 
     [Header("Attack Target")]
     public CharacterManager currentTarget;

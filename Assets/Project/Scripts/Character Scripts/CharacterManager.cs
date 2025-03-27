@@ -17,6 +17,9 @@ public class CharacterManager : NetworkBehaviour
     [HideInInspector] public CharacterCombatManager characterCombatManager;
     [HideInInspector] public CharacterSFXManager characterSFXManager;
 
+    [Header("Character Group")]
+    public CharacterGroup charactergroup;
+
     [Header("Flags")]
     public bool isPerformingAction = false;
     public bool isGrounded = true;

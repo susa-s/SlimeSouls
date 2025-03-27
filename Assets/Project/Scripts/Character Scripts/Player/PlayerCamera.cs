@@ -156,7 +156,7 @@ public class PlayerCamera : MonoBehaviour
                 {
                     RaycastHit hit;
 
-                    if(Physics.Linecast(player.playerCombatManager.lockOnTransform.position, lockOnTarget.characterCombatManager.lockOnTransform.position, out hit, WorldUtilityManager.Instance.GetEnvironhmentLayers()))
+                    if(Physics.Linecast(player.playerCombatManager.lockOnTransform.position, lockOnTarget.characterCombatManager.lockOnTransform.position, out hit, WorldUtilityManager.Instance.GetEnvironmentLayers()))
                     {
                         continue;
                     }
