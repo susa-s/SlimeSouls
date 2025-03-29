@@ -42,7 +42,6 @@ public class CharacterAnimatorManager : MonoBehaviour
         bool canRotate = false, 
         bool canMove = false)
     {
-        Debug.Log("Playing Animation: " + targetAnimation);
         character.applyRootMotion = applyRootMotion;
         character.animator.CrossFade(targetAnimation, 0.2f);
         character.isPerformingAction = isPerformingAction;
@@ -60,6 +59,7 @@ public class CharacterAnimatorManager : MonoBehaviour
         bool canMove = false)
     {
         character.characterCombatManager.currentAttackType = attackType;
+        character.characterCombatManager.lastAttackAnimationPerformed = targetAnimation;
         character.applyRootMotion = applyRootMotion;
         character.animator.CrossFade(targetAnimation, 0.2f);
         character.isPerformingAction = isPerformingAction;
@@ -67,5 +67,15 @@ public class CharacterAnimatorManager : MonoBehaviour
         character.canMove = canMove;
 
         character.characterNetworkManager.NotifyServerOfAttackActionAnimationServerRpc(NetworkManager.Singleton.LocalClientId, targetAnimation, applyRootMotion);
+    }
+
+    public virtual void EnableCanDoCombo()
+    {
+
+    }
+
+    public virtual void DisableCanDoCombo()
+    {
+
     }
 }

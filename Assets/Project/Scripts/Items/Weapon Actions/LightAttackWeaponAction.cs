@@ -4,6 +4,7 @@ using UnityEngine;
 public class LightAttackWeaponAction : WeaponItemAction
 {
     [SerializeField] string Light_Attack_01 = "SlimeLightAttack01";
+    [SerializeField] string Light_Attack_02 = "SlimeLightAttack02";
 
     public override void AttemptToPerformAction(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
     {
@@ -23,6 +24,22 @@ public class LightAttackWeaponAction : WeaponItemAction
 
     private void PerformLightAttack(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
     {
-        playerPerformingAction.playerAnimatorManager.PlayTargetAttackAnimation(AttackType.LightAttack01 ,Light_Attack_01, true, false);
+        if (playerPerformingAction.playerCombatManager.canComboWithWeapon && playerPerformingAction.isPerformingAction)
+        {
+            playerPerformingAction.playerCombatManager.canComboWithWeapon = false;
+
+            if(playerPerformingAction.characterCombatManager.lastAttackAnimationPerformed == Light_Attack_01)
+            {
+                playerPerformingAction.playerAnimatorManager.PlayTargetAttackAnimation(AttackType.LightAttack02, Light_Attack_02, true);
+            }
+            else
+            {
+                playerPerformingAction.playerAnimatorManager.PlayTargetAttackAnimation(AttackType.LightAttack01, Light_Attack_01, true, false);
+            }
+        }
+        else if(!playerPerformingAction.isPerformingAction)
+        {
+            playerPerformingAction.playerAnimatorManager.PlayTargetAttackAnimation(AttackType.LightAttack01, Light_Attack_01, true);
+        }
     }
 }

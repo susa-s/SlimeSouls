@@ -23,6 +23,6 @@ public class HeavyAtackWeaponAction : WeaponItemAction
 
     private void PerformHeavyAttack(PlayerManager playerPerformingAction, WeaponItem weaponPerformingAction)
     {
-        playerPerformingAction.playerAnimatorManager.PlayTargetAttackAnimation(AttackType.HeavyAttack01, Heavy_Attack_01, true, false);
+        playerPerformingAction.playerAnimatorManager.PlayTargetAttackAnimation(AttackType.HeavyAttack01, Heavy_Attack_01, true);
     }
 }

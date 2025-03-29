@@ -19,4 +19,14 @@ public class PlayerAnimatorManager : CharacterAnimatorManager
             player.transform.rotation *= player.animator.deltaRotation;
         }
     }
+
+    public override void EnableCanDoCombo()
+    {
+        player.playerCombatManager.canComboWithWeapon = true;
+    }
+
+    public override void DisableCanDoCombo()
+    {
+        player.playerCombatManager.canComboWithWeapon = false;
+    }
 }

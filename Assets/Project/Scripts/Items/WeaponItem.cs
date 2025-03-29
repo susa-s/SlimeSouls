@@ -17,7 +17,8 @@ public class WeaponItem : Item
 
     [Header("Attack Modifiers")]
     [Header("Attack Modifiers")]
-    public float light_attack_01_Modifier = 1.1f;
+    public float light_attack_01_Modifier = 1.0f;
+    public float light_attack_02_Modifier = 1.2f;
     public float heavy_attack_01_Modifier = 1.4f;
     public float charged_attack_01_Modifier = 2.0f;
 
