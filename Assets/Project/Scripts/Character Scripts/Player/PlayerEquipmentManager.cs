@@ -120,7 +120,7 @@ public class PlayerEquipmentManager : CharacterEquipmentManager
     {
         weaponManager.meleeDamageCollider.EnableDamageCollider();
 
-        // play sfx
+        player.characterSFXManager.PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(player.playerInventoryManager.currentWeapon.whooshes));
     }
 
     public void CloseDamageCollider()

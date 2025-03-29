@@ -57,4 +57,14 @@ public class CharacterLocomotionManager : MonoBehaviour
     {
         Gizmos.DrawSphere(character.transform.position, groundCheckSphereRadius);
     }
+
+    public void EnableCanRotateTrue()
+    {
+        character.canRotate = true;
+    }
+
+    public void DisableCanRotateFalse()
+    {
+        character.canRotate = false;
+    }
 }

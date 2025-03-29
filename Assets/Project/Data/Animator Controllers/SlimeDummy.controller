@@ -204,7 +204,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlimeHeavyAttack01
+  m_Name: HeavyAttack01
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -218,7 +218,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6f0236b1706b30548b443f9bb47f2413, type: 2}
+  m_Motion: {fileID: 7400000, guid: fd85fa424934d104382f11c998765eeb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -477,7 +477,7 @@ AnimatorStateMachine:
     m_Position: {x: 260, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4048992807057971744}
-    m_Position: {x: 380, y: 280, z: 0}
+    m_Position: {x: 390, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -997020629626644814}
     m_Position: {x: 670, y: 150, z: 0}
@@ -495,7 +495,7 @@ AnimatorStateMachine:
     m_Position: {x: 740, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7063665839869802618}
-    m_Position: {x: 840, y: 30, z: 0}
+    m_Position: {x: 840, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3576428505360997823}
     m_Position: {x: 540, y: -150, z: 0}
@@ -528,7 +528,7 @@ AnimatorStateMachine:
     m_Position: {x: 290, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5134969809615311324}
-    m_Position: {x: 430, y: 330, z: 0}
+    m_Position: {x: 460, y: 370, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -599,7 +599,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlimeLightAttack01
+  m_Name: Attack01
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -613,7 +613,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c8121030a4730e440b047240ddfae76d, type: 2}
+  m_Motion: {fileID: 7400000, guid: bc33a21bde5f3d04badce4f20e128e52, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1236,6 +1236,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -1009543889975007811}
     m_Position: {x: 550, y: 50, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 4421470816747838345}
+    m_Position: {x: 585, y: 115, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -1269,6 +1272,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: b890f597403f4cf4ea8a1ee7f7518370, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &4421470816747838345
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DummyHeavyAttackStart01
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: fd85fa424934d104382f11c998765eeb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1368,7 +1397,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlimeLightAttack02
+  m_Name: Attack01Combo
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1443,7 +1472,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 91a2526fe6effbe459732561a0510f6c, type: 2}
+  m_Motion: {fileID: 7400000, guid: ba49021252ecc114b9d0df586762bfb6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

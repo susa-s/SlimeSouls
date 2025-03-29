@@ -29,4 +29,7 @@ public class WeaponItem : Item
     [Header("Actions")]
     public WeaponItemAction rbAction;
     public WeaponItemAction rtAction;
+
+    [Header("Whooshes")]
+    public AudioClip[] whooshes;
 }

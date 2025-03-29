@@ -247,8 +247,18 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         player.canMove = true;
     }
 
-    public void SetPlayerCanRotateTrue()
+    public void SetPlayerCanMoveFalse()
     {
-        player.canRotate = true;
+        player.canMove = false;
+    }
+
+    public void SetPlayerIsPerformingActionTrue()
+    {
+        player.isPerformingAction = true;
+    }
+
+    public void SetPlayerIsPerformingActionFalse()
+    {
+        player.isPerformingAction = false;
     }
 }
