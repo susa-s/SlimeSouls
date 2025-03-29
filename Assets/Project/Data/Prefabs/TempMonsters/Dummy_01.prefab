@@ -422,7 +422,6 @@ GameObject:
   - component: {fileID: -8178181911473551113}
   - component: {fileID: 4117470422246266082}
   - component: {fileID: 846289463377753983}
-  - component: {fileID: 8717954900259631297}
   - component: {fileID: 4208182211996192209}
   - component: {fileID: 1436484634718948974}
   - component: {fileID: 4955305807001597736}
@@ -432,6 +431,7 @@ GameObject:
   - component: {fileID: -2165534084149050265}
   - component: {fileID: -8522125662576354713}
   - component: {fileID: -1674333123698265847}
+  - component: {fileID: 7499928328811769750}
   m_Layer: 6
   m_Name: Dummy_01
   m_TagString: Untagged
@@ -582,22 +582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f0d22eb5264ea4a9324249aa908f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8717954900259631297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190084127861701539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d7462b750ce2bc4f98df848a2d6c544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hit_Forward_01: SlimeHitForward
-  hit_Backward_01: SlimeHitBackward
-  hit_Left_01: SlimeHitLeft
-  hit_Right_01: SlimeHitRight
 --- !u!114 &4208182211996192209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,7 +631,7 @@ Animator:
   m_GameObject: {fileID: 6190084127861701539}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c9a439715a787c47b2f337830783253, type: 2}
+  m_Controller: {fileID: 9100000, guid: c5d9861a8e4d2bd4094290316e550fdc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -824,9 +808,11 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   currentAttackType: 0
   lockOnTransform: {fileID: 6621052923006365143}
+  viewableAngle: 0
+  targetsDirection: {x: 0, y: 0, z: 0}
   detectionRadius: 15
-  minimumDetectionAngle: -35
-  maximumDetectionAngle: 35
+  minimumFOV: -35
+  maximumFOV: 35
 --- !u!114 &-1674333123698265847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +833,22 @@ MonoBehaviour:
   yVelocity: {x: 0, y: 0, z: 0}
   groundedYVelocity: -20
   fallStartYVelocity: -5
+--- !u!114 &7499928328811769750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190084127861701539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84bd36f5d7135d94f8cef70c9abddf54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hit_Forward_01: SlimeHitForward
+  hit_Backward_01: SlimeHitBackward
+  hit_Left_01: SlimeHitLeft
+  hit_Right_01: SlimeHitRight
 --- !u!1 &7359546340100768099
 GameObject:
   m_ObjectHideFlags: 0
