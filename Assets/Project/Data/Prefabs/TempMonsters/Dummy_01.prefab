@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3760530616
+  GlobalObjectIdHash: 3924211096
   InScenePlacedSourceGlobalObjectIdHash: 2454645366
   DeferredDespawnTick: 0
   Ownership: 1
@@ -637,6 +637,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4e5e8e02b30b54b92113fca88ff5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageGrunts:
+  - {fileID: 8300000, guid: 17cb9468c34c8424d9d7fb9e05d0d005, type: 3}
+  attackGrunts:
+  - {fileID: 8300000, guid: d1f8295b23efb184db56e33d77eda78e, type: 3}
 --- !u!95 &8810380673921967170
 Animator:
   serializedVersion: 7
@@ -1017,3 +1021,4 @@ MonoBehaviour:
   damageCollider: {fileID: 0}
   physicalDamage: 0
   magicDamage: 0
+  dummyCharacter: {fileID: 0}

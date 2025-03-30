@@ -22,6 +22,7 @@ public class AIDummyCombatManager : AICharacterCombatManager
 
     public void OpenWeaponCollider()
     {
+        aiCharacter.characterSFXManager.PlayAttackGrunt();
         weaponCollider.EnableDamageCollider();
     }
 

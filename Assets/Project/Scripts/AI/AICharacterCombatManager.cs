@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AICharacterCombatManager : CharacterCombatManager
 {
+    protected AICharacterManager aiCharacter;
+
     [Header("Target Information")]
     public float distanceFromTarget;
     public float viewableAngle;
@@ -22,6 +24,7 @@ public class AICharacterCombatManager : CharacterCombatManager
     {
         base.Awake();
 
+        aiCharacter = GetComponent<AICharacterManager>();
         lockOnTransform = GetComponentInChildren<LockOnTransform>().transform;
     }
 

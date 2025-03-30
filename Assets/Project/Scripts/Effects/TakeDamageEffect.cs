@@ -74,6 +74,7 @@ public class TakeDamageEffect : InstantCharacterEffect
         AudioClip physicalDamageSFX = WorldSFXManager.instance.ChooseRandomSFXFromArray(WorldSFXManager.instance.physicalDamageSFX);
 
         character.characterSFXManager.PlaySFX(physicalDamageSFX);
+        character.characterSFXManager.PlayDamageGrunt();
     }
 
     private void PLayDirectionalBasedDamageAnimation(CharacterManager character)
@@ -100,11 +101,11 @@ public class TakeDamageEffect : InstantCharacterEffect
         }
         else if (angleHitFrom >= -144 && angleHitFrom <= -45)
         {
-            damageAnimation = character.characterAnimatorManager.hit_Right_01;
+            damageAnimation = character.characterAnimatorManager.hit_Left_01;
         }
         else if (angleHitFrom >= 45 && angleHitFrom <= 144)
         {
-            damageAnimation = character.characterAnimatorManager.hit_Left_01;
+            damageAnimation = character.characterAnimatorManager.hit_Right_01;
         }
 
         if (poiseIsBroken)
