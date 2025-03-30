@@ -34,11 +34,13 @@ public class CharacterSFXManager : MonoBehaviour
 
     public void PlayDamageGrunt()
     {
-        PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(damageGrunts));
+        if (damageGrunts.Length > 0)
+            PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(damageGrunts));
     }
 
     public virtual void PlayAttackGrunt()
     {
-        PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(attackGrunts));
+        if (attackGrunts.Length > 0)
+            PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(attackGrunts));
     }
 }
