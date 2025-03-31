@@ -28,10 +28,13 @@ public class CombatStanceState : AIState
         if (!aiCharacter.navMeshAgent.enabled)
             aiCharacter.navMeshAgent.enabled = true;
 
-        if (!aiCharacter.aiCharacterNetworkManager.isMoving.Value)
+        if (aiCharacter.aiCharacterCombatManager.enablePivot)
         {
-            if (aiCharacter.aiCharacterCombatManager.viewableAngle < -30 || aiCharacter.aiCharacterCombatManager.viewableAngle > 30)
-                aiCharacter.aiCharacterCombatManager.PivotTowardsTarget(aiCharacter);
+            if (!aiCharacter.aiCharacterNetworkManager.isMoving.Value)
+            {
+                if (aiCharacter.aiCharacterCombatManager.viewableAngle < -30 || aiCharacter.aiCharacterCombatManager.viewableAngle > 30)
+                    aiCharacter.aiCharacterCombatManager.PivotTowardsTarget(aiCharacter);
+            }
         }
 
         aiCharacter.aiCharacterCombatManager.RotateTowardsAgent(aiCharacter);

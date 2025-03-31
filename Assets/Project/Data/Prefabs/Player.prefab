@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4020895412
+  GlobalObjectIdHash: 747878024
   InScenePlacedSourceGlobalObjectIdHash: 4020895412
   DeferredDespawnTick: 0
   Ownership: 1
@@ -446,6 +446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  isActive:
+    m_InternalValue: 1
   networkPosition:
     m_InternalValue: {x: 0, y: 0, z: 0}
   networkRotation:
@@ -462,6 +464,8 @@ MonoBehaviour:
   moveAmount:
     m_InternalValue: 0
   currentTargetNetworkObjectID:
+    m_InternalValue: 0
+  isInvulnerable:
     m_InternalValue: 0
   isSprinting:
     m_InternalValue: 0
@@ -605,6 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541b569f2346dc1408491f783599aae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
   gravityForce: -20
   groundLayer:
     serializedVersion: 2

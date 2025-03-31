@@ -12,6 +12,9 @@ public class AICharacterCombatManager : CharacterCombatManager
     [Header("Recovery Timer")]
     public float actionRecoveryTimer = 0;
 
+    [Header("Pivot")]
+    public bool enablePivot = true;
+
     [Header("Detection")]
     [SerializeField] float detectionRadius = 15;
     public float minimumFOV = -35;
@@ -65,14 +68,16 @@ public class AICharacterCombatManager : CharacterCombatManager
                         targetsDirection = targetCharacter.transform.position - transform.position;
                         viewableAngle = WorldUtilityManager.Instance.GetAngleOfTarget(transform, targetsDirection);
                         aiCharacter.characterCombatManager.SetTarget(targetCharacter);
-                        PivotTowardsTarget(aiCharacter);
+
+                        if(enablePivot)
+                            PivotTowardsTarget(aiCharacter);
                     }
                 }
             }
         }
     }
 
-    public void PivotTowardsTarget(AICharacterManager aiCharacter)
+    public virtual void PivotTowardsTarget(AICharacterManager aiCharacter)
     {
         if (aiCharacter.isPerformingAction)
             return;

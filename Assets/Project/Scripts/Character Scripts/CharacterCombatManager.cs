@@ -37,4 +37,16 @@ public class CharacterCombatManager : NetworkBehaviour
             }
         }
     }
+
+    public void EnableInvulnerable()
+    {
+        if (character.IsOwner)
+            character.characterNetworkManager.isInvulnerable.Value = true;
+    }
+
+    public void DisableInvulnerable()
+    {
+        if (character.IsOwner)
+            character.characterNetworkManager.isInvulnerable.Value = false;
+    }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CharacterLocomotionManager : MonoBehaviour
 {
-    CharacterManager character;
+    public CharacterManager character;
 
     [Header("Ground Check and Jumping")]
     [SerializeField] protected float gravityForce = -5.5f;
@@ -48,7 +48,7 @@ public class CharacterLocomotionManager : MonoBehaviour
         character.characterController.Move(yVelocity * Time.deltaTime);
     }
 
-    protected void HandleGroundCheck()
+    protected virtual void HandleGroundCheck()
     {
         character.isGrounded = Physics.CheckSphere(character.transform.position, groundCheckSphereRadius, groundLayer);
     }

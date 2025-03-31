@@ -11,7 +11,7 @@ public class AttackState : AIState
     protected bool hasPerformedAttack = false;
     protected bool hasPerformedCombo = false;
 
-    [Header("Pivot After Attadck")]
+    [Header("Pivot After Attack")]
     [SerializeField] protected bool pivotAfterAttack = false;
 
     public override AIState Tick(AICharacterManager aiCharacter)

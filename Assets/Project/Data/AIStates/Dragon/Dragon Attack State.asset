@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ea23fe7b4f4e64c88fdb4d12632b30, type: 3}
   m_Name: Dragon Attack State
   m_EditorClassIdentifier: 
-  currentAttack: {fileID: 0}
+  currentAttack: {fileID: 11400000, guid: b9cd81fb86ae03c4eadc430ff4dd6c01, type: 2}
   willPerformCombo: 0
-  pivotAfterAttack: 0
+  pivotAfterAttack: 1

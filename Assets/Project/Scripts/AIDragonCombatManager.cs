@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AIDragonCombatManager : AICharacterCombatManager
 {
+    private ParticleSystem fireBreath;
+
     [Header("Damage Collider")]
     [SerializeField] DragonClawDamageCollider rightClawCollider;
     [SerializeField] DragonClawDamageCollider leftClawCollider;
@@ -11,6 +13,11 @@ public class AIDragonCombatManager : AICharacterCombatManager
     [SerializeField] int baseDamage = 25;
     [SerializeField] float attack01DamageModifer = 1.0f;
     [SerializeField] float attack02DamageModifer = 1.4f;
+
+    private void Start()
+    {
+        fireBreath = GetComponentInChildren<ParticleSystem>();
+    }
 
     public void SetAttack01Damage()
     {
@@ -54,5 +61,40 @@ public class AIDragonCombatManager : AICharacterCombatManager
     public void CloseFireBreathCollider()
     {
         fireBreathCollider.DisableDamageCollider();
+    }
+
+    public void EnableFireBreathParticles()
+    {
+        fireBreath.Play();
+    }
+
+    public void DisableFireBreathParticles()
+    {
+        fireBreath.Stop();
+    }
+
+    public override void PivotTowardsTarget(AICharacterManager aiCharacter)
+    {
+        base.PivotTowardsTarget(aiCharacter);
+
+        if (aiCharacter.isPerformingAction)
+            return;
+        
+        if (viewableAngle >= 61 && viewableAngle <= 110)
+        {
+            aiCharacter.characterAnimatorManager.PlayTargetActionAnimation("TurnR90", true);
+        }
+        else if (viewableAngle <= -61 && viewableAngle >= -110)
+        {
+            aiCharacter.characterAnimatorManager.PlayTargetActionAnimation("TurnL90", true);
+        }
+        else if (viewableAngle >= 146 && viewableAngle <= 180)
+        {
+            aiCharacter.characterAnimatorManager.PlayTargetActionAnimation("TurnR180", true);
+        }
+        else if (viewableAngle <= -146 && viewableAngle >= -180)
+        {
+            aiCharacter.characterAnimatorManager.PlayTargetActionAnimation("TurnL180", true);
+        }
     }
 }
