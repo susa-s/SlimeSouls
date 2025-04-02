@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AIDragonCombatManager : AICharacterCombatManager
 {
-    AIBossCharacterManager aiBossManager;
+    AIDragonCharacterManager dragonManager;
 
     private ParticleSystem fireBreath;
 
@@ -22,7 +22,7 @@ public class AIDragonCombatManager : AICharacterCombatManager
     {
         base.Awake();
 
-        aiBossManager = GetComponent<AIBossCharacterManager>();
+        dragonManager = GetComponent<AIDragonCharacterManager>();
     }
 
     private void Start()
@@ -56,7 +56,7 @@ public class AIDragonCombatManager : AICharacterCombatManager
     {
         aiCharacter.characterSFXManager.PlayAttackGrunt();
         fireBreathCollider.EnableDamageCollider();
-        //aiBossManager.characterSFXManager.PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(whooshes));
+        dragonManager.characterSFXManager.PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(dragonManager.dragonSFXManager.fireBreath));
     }
 
     public void CloseRightClawCollider()
