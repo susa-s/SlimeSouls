@@ -132,6 +132,8 @@ public class PlayerManager : CharacterManager
         if (IsOwner)
         {
             PlayerUIManager.instance.playerUIPopUpManager.SendYouDiedPopUP();
+            canMove = false;
+            canRotate = false;
         }
 
         return base.ProcessDeathEvent(manuallySelectDeathAnimation);
