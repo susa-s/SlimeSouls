@@ -28,6 +28,6 @@ MonoBehaviour:
   baseStaminaCost: 5
   lightAttackStaminaCostMultiplier: 0.9
   rbAction: {fileID: 11400000, guid: 6cc3882866fac0d4da8202f07460e7a0, type: 2}
-  rtAction: {fileID: 0}
+  rtAction: {fileID: 11400000, guid: 6cc3882866fac0d4da8202f07460e7a0, type: 2}
   whooshes:
   - {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
