@@ -627,10 +627,10 @@ MonoBehaviour:
   rotationSpeed: 8
   sprintingStaminaCost: 5
   jumpHeight: 4
-  jumpStaminaCost: 8
+  jumpStaminaCost: 15
   jumpForwardSpeed: 4.5
   freeFallSpeed: 2.5
-  dodgeStaminaCost: 8
+  dodgeStaminaCost: 25
 --- !u!114 &8978254056665592388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaRegenerationDelay: 1
-  staminaRegenAmount: 2
+  staminaRegenAmount: 3
 --- !u!114 &9128271140688975078
 MonoBehaviour:
   m_ObjectHideFlags: 0

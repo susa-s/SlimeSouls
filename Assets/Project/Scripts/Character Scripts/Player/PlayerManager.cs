@@ -134,6 +134,8 @@ public class PlayerManager : CharacterManager
             PlayerUIManager.instance.playerUIPopUpManager.SendYouDiedPopUP();
             canMove = false;
             canRotate = false;
+            isPerformingAction = true;
+            playerNetworkManager.isSprinting.Value = false;
         }
 
         return base.ProcessDeathEvent(manuallySelectDeathAnimation);

@@ -25,8 +25,9 @@ MonoBehaviour:
   light_attack_02_Modifier: 1.2
   heavy_attack_01_Modifier: 1.4
   charged_attack_01_Modifier: 2
-  baseStaminaCost: 20
+  baseStaminaCost: 30
   lightAttackStaminaCostMultiplier: 0.9
+  heavyAttackStaminaCostMultiplier: 1.1
   rbAction: {fileID: 11400000, guid: 6cc3882866fac0d4da8202f07460e7a0, type: 2}
   rtAction: {fileID: 11400000, guid: 21bb62d6704f4a849b39523bd3d04c37, type: 2}
   whooshes:

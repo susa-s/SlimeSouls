@@ -30,5 +30,7 @@ public enum AttackType
     LightAttack02,
     HeavyAttack01,
     ChargedAttack01,
-    ChargedAttack02
+    DragonSwipeAttack,
+    DragonFireBreathAttack,
+    DragonBackStep
 }

@@ -25,6 +25,7 @@ public class WeaponItem : Item
     [Header("Stamina Cost Modifiers")]
     public int baseStaminaCost = 20;
     public float lightAttackStaminaCostMultiplier = 0.9f;
+    public float heavyAttackStaminaCostMultiplier = 1.1f;
 
     [Header("Actions")]
     public WeaponItemAction rbAction;
