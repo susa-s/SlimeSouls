@@ -177,6 +177,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Que RB",
+                    "type": "Button",
+                    "id": "c8aca0a2-8f46-42cb-8bcf-4d4978ffbe49",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "SwichWeapon",
                     "type": "Button",
                     "id": "e1268e50-ec0c-4242-b3f8-e9d2e53ca4ee",
@@ -253,6 +262,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6514d39d-53bc-42d1-861b-2882ae0030c4",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Que RB",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -33,6 +33,12 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool rtInput = false;
     [SerializeField] bool hold_rtInput = false;
 
+    [Header("QUED INPUT")]
+    private bool inputQueIsActive = false;
+    [SerializeField] float defaultQueInputTime = 0.35f;
+    [SerializeField] float queInputTimer = 0;
+    [SerializeField] bool queRBInput = false;
+
     [Header("LOCK ON INPUT")]
     [SerializeField] bool lockOnInput = false;
 
@@ -107,6 +113,8 @@ public class PlayerInputManager : MonoBehaviour
             playerControls.PlayerActions.Sprint.canceled += i => sprintInput = false;
 
             playerControls.PlayerActions.LockOn.performed += i => lockOnInput = true;
+
+            playerControls.PlayerActions.QueRB.performed += i => QueInput(ref queRBInput);
         }
 
         playerControls.Enable();
@@ -148,6 +156,7 @@ public class PlayerInputManager : MonoBehaviour
         HandleRTInput();
         HandleChargeRTInput();
         HandleSwitchWeaponInput();
+        HandleQuedInputs();
         HandleLockOnInput();
     }
 
@@ -190,6 +199,8 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleDodgeInput()
     {
+        if (player.playerNetworkManager.isJumping.Value)
+            return;
         if (dodgeInput)
         {
             dodgeInput = false;
@@ -222,6 +233,9 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleRBInput()
     {
+        if (player.isDead.Value)
+            return;
+
         if (rbInput)
         {
             rbInput = false;
@@ -232,6 +246,9 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleRTInput()
     {
+        if (player.isDead.Value)
+            return;
+
         if (rtInput)
         {
             rtInput = false;
@@ -289,6 +306,45 @@ public class PlayerInputManager : MonoBehaviour
             {
                 player.playerCombatManager.SetTarget(PlayerCamera.instance.nearestLockOnTarget);
                 player.playerNetworkManager.islockedOn.Value = true;
+            }
+        }
+    }
+
+    private void QueInput(ref bool quedInput)
+    {
+        queRBInput = false;
+
+        if(player.isPerformingAction || player.playerNetworkManager.isJumping.Value)
+        {
+            quedInput = true;
+            queInputTimer = defaultQueInputTime;
+            inputQueIsActive = true;
+        }
+    }
+
+    private void ProcessQuedInputs()
+    {
+        if (player.isDead.Value)
+            return;
+
+        if (queRBInput)
+            rbInput = true;
+    }
+
+    private void HandleQuedInputs()
+    {
+        if (inputQueIsActive)
+        {
+            if(queInputTimer > 0)
+            {
+                queInputTimer -= Time.deltaTime;
+                ProcessQuedInputs();
+            }
+            else
+            {
+                queRBInput = false;
+                inputQueIsActive = false;
+                queInputTimer = 0;
             }
         }
     }

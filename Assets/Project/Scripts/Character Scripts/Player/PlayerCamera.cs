@@ -9,10 +9,10 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] Transform cameraPivotTransform;
 
     [Header("Camera Settings")]
-    private float cameraSmoothSpeed = 1;
+    [SerializeField] private float cameraSmoothSpeed = 1;
     [SerializeField] float leftAndRightRotationSpeed = 125;
     [SerializeField] float upAndDownRotationSpeed = 125;
-    [SerializeField] float minPivot = -10;
+    [SerializeField] float minPivot = 0;
     [SerializeField] float maxPivot = 60;
     [SerializeField] float cameraCollisionRadius = 0.2f;
     [SerializeField] LayerMask collideWithLayers;

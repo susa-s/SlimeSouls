@@ -2327,33 +2327,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1225418088837700012, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
+      propertyPath: minPivot
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 1550161288665530462, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
       propertyPath: m_Name
       value: Player Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 1550161288665530462, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 2595822137544975283, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669481825096646493, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
-      propertyPath: m_RendererIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4200890237147588666, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5215290745418103151, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 5991966699737004733, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
-      propertyPath: field of view
-      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8670653069450586671, guid: d7deee6661549db4eabcd49230146fd3, type: 3}
       propertyPath: m_LocalPosition.x
