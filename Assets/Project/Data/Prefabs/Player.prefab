@@ -373,6 +373,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2165534084149050265}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2902627147550045337}
     - targetCorrespondingSourceObject: {fileID: 6905609870639353253, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 554650748100702052}
@@ -625,7 +628,7 @@ MonoBehaviour:
   runningSpeed: 5
   sprintingSpeed: 7
   rotationSpeed: 8
-  sprintingStaminaCost: 5
+  sprintingStaminaCost: 10
   jumpHeight: 4
   jumpStaminaCost: 15
   jumpForwardSpeed: 4.5
@@ -915,6 +918,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2902627147550045337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190084127861701539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3df4ed3ef122747ba1a26482b38fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6821906817842061593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1603f15c7355cba4ebc37895e42fd4f0, type: 3}
