@@ -4448,7 +4448,7 @@ GameObject:
   - component: {fileID: 989963664}
   - component: {fileID: 989963665}
   m_Layer: 12
-  m_Name: Stone_2 (1)
+  m_Name: Sword Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
