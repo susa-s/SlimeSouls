@@ -15,7 +15,7 @@ MonoBehaviour:
   attackAnimation: DragonAttack02
   comboAction: {fileID: 0}
   attackType: 5
-  attackWeight: 45
+  attackWeight: 50
   actionRecoveryTime: 2
   minimumAttackAngle: -35
   maximumAttackAngle: 35

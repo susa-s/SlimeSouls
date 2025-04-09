@@ -140,7 +140,21 @@ public class PlayerManager : CharacterManager
             playerNetworkManager.isSprinting.Value = false;
         }
 
-        return base.ProcessDeathEvent(manuallySelectDeathAnimation);
+        yield return base.ProcessDeathEvent(manuallySelectDeathAnimation);
+
+        yield return new WaitForSeconds(1.5f);
+
+        yield return PlayerUIManager.instance.playerUIPopUpManager.FadeToBlack();
+
+        yield return new WaitForSeconds(0.5f);
+
+        Vector3 respawnPoint = new Vector3(74, 1, -70); 
+        transform.position = respawnPoint;
+        ReviveCharacter();
+
+        yield return new WaitForSeconds(0.3f);
+
+        yield return PlayerUIManager.instance.playerUIPopUpManager.FadeFromBlack();
     }
 
     public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)

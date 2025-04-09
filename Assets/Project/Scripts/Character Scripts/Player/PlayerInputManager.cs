@@ -270,6 +270,9 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleSwitchWeaponInput()
     {
+        if (player.isDead.Value)
+            return;
+
         if (switchWeaponInput)
         {
             switchWeaponInput = false;

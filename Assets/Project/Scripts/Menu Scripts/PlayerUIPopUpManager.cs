@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 
@@ -19,6 +20,10 @@ public class PlayerUIPopUpManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI bossDefeatedPopUpBackgroundText;
     [SerializeField] TextMeshProUGUI bossDefeatedPopUpText;
     [SerializeField] CanvasGroup bossDefeatedPopUpCanvasGroup;
+
+    [Header("ScreenFade")]
+    [SerializeField] private Image blackScreenFade;
+    [SerializeField] private float fadeDuration = 1.5f;
 
     public void CloseAllPopUpWindows()
     {
@@ -41,6 +46,7 @@ public class PlayerUIPopUpManager : MonoBehaviour
         StartCoroutine(StretchPopUpTextOverTime(youDiedPopUpBackgroundText, 8, 19f));
         StartCoroutine(FadeInPopUpOverTime(youDiedPopUpCanvasGroup, 5));
         StartCoroutine(WaitThenFadeOutPopUpOverTime(youDiedPopUpCanvasGroup, 2, 5));
+
     }
 
     public void SendBossDefeatedPopUP(string bossDefeatedMessage)
@@ -119,5 +125,47 @@ public class PlayerUIPopUpManager : MonoBehaviour
         canvas.alpha = 0;
 
         yield return null;
+    }
+
+    public IEnumerator FadeToBlack(float customFadeDuration = -1f)
+    {
+        float duration = customFadeDuration > 0 ? customFadeDuration : fadeDuration;
+        float elapsed = 0f;
+        Color c = blackScreenFade.color;
+        c.a = 0;
+        blackScreenFade.color = c;
+        blackScreenFade.gameObject.SetActive(true);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            c.a = Mathf.Clamp01(elapsed / duration);
+            blackScreenFade.color = c;
+            yield return null;
+        }
+
+        c.a = 1;
+        blackScreenFade.color = c;
+    }
+
+    public IEnumerator FadeFromBlack(float customFadeDuration = -1f)
+    {
+        float duration = customFadeDuration > 0 ? customFadeDuration : fadeDuration;
+        float elapsed = 0f;
+        Color c = blackScreenFade.color;
+        c.a = 1;
+        blackScreenFade.color = c;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            c.a = 1f - Mathf.Clamp01(elapsed / duration);
+            blackScreenFade.color = c;
+            yield return null;
+        }
+
+        c.a = 0;
+        blackScreenFade.color = c;
+        blackScreenFade.gameObject.SetActive(false);
     }
 }

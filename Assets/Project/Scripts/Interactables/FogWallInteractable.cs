@@ -1,7 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 
-public class FogWallInteractable : NetworkBehaviour
+public class FogWallInteractable : Interactable
 {
     [Header("Fog")]
     [SerializeField] GameObject[] fogGameObjects;
