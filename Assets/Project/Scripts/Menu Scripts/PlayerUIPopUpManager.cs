@@ -4,6 +4,10 @@ using TMPro;
 
 public class PlayerUIPopUpManager : MonoBehaviour
 {
+    [Header("Messagee Pop Up")]
+    [SerializeField] TextMeshProUGUI popUpMessageText;
+    [SerializeField] GameObject popUpMessageGameObject;
+
     [Header("You Died Pop UP")]
     [SerializeField] GameObject youDiedPopUpGameObject;
     [SerializeField] TextMeshProUGUI youDiedPopUpBackgroundText;
@@ -15,6 +19,20 @@ public class PlayerUIPopUpManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI bossDefeatedPopUpBackgroundText;
     [SerializeField] TextMeshProUGUI bossDefeatedPopUpText;
     [SerializeField] CanvasGroup bossDefeatedPopUpCanvasGroup;
+
+    public void CloseAllPopUpWindows()
+    {
+        popUpMessageGameObject.SetActive(false);
+
+        PlayerUIManager.instance.popUpWindowIsOpen = false;
+    }
+
+    public void SendPlayerMessagePopUp(string messageText)
+    {
+        PlayerUIManager.instance.popUpWindowIsOpen = true;
+        popUpMessageText.text = messageText;
+        popUpMessageGameObject.SetActive(true);
+    }
 
     public void SendYouDiedPopUP()
     {

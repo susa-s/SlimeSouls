@@ -11,6 +11,10 @@ public class PlayerUIManager : MonoBehaviour
     [HideInInspector] public PlayerUIHudManager playerUIHudManager;
     [HideInInspector] public PlayerUIPopUpManager playerUIPopUpManager;
 
+    [Header("UI Flags")]
+    public bool menuWindowIsOpen = false;
+    public bool popUpWindowIsOpen = false;
+
     private void Awake()
     {
         if(instance == null)

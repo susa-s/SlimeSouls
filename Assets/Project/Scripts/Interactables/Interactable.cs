@@ -20,7 +20,17 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact(PlayerManager player)
     {
+        Debug.Log("Interacted");
 
+        if (!player.IsOwner)
+            return;
+
+        interactableCollider.enabled = false;
+
+        player.playerInteractionManager.RemoveInteractionFromList(this);
+
+        if (player.IsOwner)
+            PlayerUIManager.instance.playerUIPopUpManager.CloseAllPopUpWindows();
     }
 
     public virtual void OnTriggerEnter(Collider other)
@@ -35,7 +45,7 @@ public class Interactable : MonoBehaviour
             if (!player.IsOwner)
                 return;
 
-
+            player.playerInteractionManager.AddInteractionToList(this);
         }
     }
 
@@ -51,7 +61,9 @@ public class Interactable : MonoBehaviour
             if (!player.IsOwner)
                 return;
 
+            player.playerInteractionManager.RemoveInteractionFromList(this);
 
+            PlayerUIManager.instance.playerUIPopUpManager.CloseAllPopUpWindows();
         }
     }
 }
