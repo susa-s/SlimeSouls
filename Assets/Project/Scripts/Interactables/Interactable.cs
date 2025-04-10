@@ -29,8 +29,7 @@ public class Interactable : NetworkBehaviour
 
         player.playerInteractionManager.RemoveInteractionFromList(this);
 
-        if (player.IsOwner)
-            PlayerUIManager.instance.playerUIPopUpManager.CloseAllPopUpWindows();
+        PlayerUIManager.instance.playerUIPopUpManager.CloseAllPopUpWindows();
     }
 
     public virtual void OnTriggerEnter(Collider other)

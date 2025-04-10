@@ -131,8 +131,6 @@ public class PlayerCamera : MonoBehaviour
     public void HandleLocatingLockOnTarget()
     {
         float shortestDistance = Mathf.Infinity;
-        float shortestDistanceOfRightTarget = Mathf.Infinity;
-        float shortestDistanceOfLeftTarget = -Mathf.Infinity;
 
         Collider[] colliders = Physics.OverlapSphere(player.transform.position, lockOnRadius, WorldUtilityManager.Instance.GetCharacterLayers());
 

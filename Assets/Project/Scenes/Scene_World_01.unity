@@ -455,6 +455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -524,6 +528,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -822,6 +830,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -1400,6 +1412,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -2234,6 +2250,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -3193,6 +3213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -3263,6 +3287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -3332,6 +3360,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -3638,6 +3670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -3817,6 +3853,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -5056,6 +5096,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -10771,6 +10815,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -10840,6 +10888,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -11591,6 +11643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -12157,6 +12213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -12674,6 +12734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -12846,6 +12910,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -13872,6 +13940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -14049,6 +14121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -14225,6 +14301,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -14740,6 +14820,10 @@ PrefabInstance:
     - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_Name
       value: Fog Wall Interactable (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
@@ -15804,76 +15888,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &1997863219
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2001135177}
-    m_Modifications:
-    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_Name
-      value: Fog Wall Interactable
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.216751
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -20.521334
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.741394
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6963929201061699476, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 4237710899
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cf190601f09388d439ca83a7da483c68, type: 3}
---- !u!4 &1997863220 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
-  m_PrefabInstance: {fileID: 1997863219}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2001135176
 GameObject:
   m_ObjectHideFlags: 0
@@ -15903,7 +15917,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1997863220}
+  - {fileID: 6166890125730188792}
   - {fileID: 1686783440}
   - {fileID: 588947892}
   - {fileID: 1202787269}
@@ -16447,6 +16461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog Wall Interactable (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 3503463385108105671, guid: cf190601f09388d439ca83a7da483c68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6166890125010138315, guid: cf190601f09388d439ca83a7da483c68, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.46
@@ -16794,6 +16812,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3644c1e9f380eb94bb638ba485a27394, type: 3}
+--- !u!4 &6166890125730188792 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+  m_PrefabInstance: {fileID: 8610544707205652321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6364734299246527289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16908,6 +16931,80 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3d7e45a03124e44b355136cd7ededd, type: 3}
+--- !u!1001 &8610544707205652321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2001135177}
+    m_Modifications:
+    - target: {fileID: 1020768802141771699, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3333293799
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020768802141771699, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1568399996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880411795583808532, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: fogWallCollider
+      value: 
+      objectReference: {fileID: 8610544707205652322}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.216751
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.521334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.741394
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468009026203229926, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544246127484615221, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+      propertyPath: m_Name
+      value: Fog Wall Interactable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+--- !u!65 &8610544707205652322 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 4484838494432787008, guid: caa010d11afa72d4faf2a17ca5148334, type: 3}
+  m_PrefabInstance: {fileID: 8610544707205652321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

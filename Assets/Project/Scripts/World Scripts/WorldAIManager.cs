@@ -68,21 +68,12 @@ public class WorldAIManager : MonoBehaviour
     {
         DespawnAllCharacters();
 
-        foreach(var spawner in aiCharacterSpawners)
+        spawnedInCharacters.Clear();
+        spawnedInBosses.Clear();
+
+        foreach (var spawner in aiCharacterSpawners)
         {
             spawner.AttemptToSpawnCharacter();
-        }
-
-        StartCoroutine(ResetBossStatesNextFrame());
-    }
-
-    private IEnumerator ResetBossStatesNextFrame()
-    {
-        yield return null;
-
-        foreach (var boss in spawnedInBosses)
-        {
-            boss.ResetBossState();
         }
     }
 

@@ -53,6 +53,11 @@ public class PlayerManager : CharacterManager
         base.LateUpdate();
 
         PlayerCamera.instance.HandleAllCameraActions();
+
+        if (isDead.Value)
+        {
+            PlayerCamera.instance.ClearLockOnTargets();
+        }
     }
 
     public override void OnNetworkSpawn()

@@ -179,15 +179,4 @@ public class AIBossCharacterManager : AICharacterManager
             bossHPBar.EnableBossHPBar(this);
         }
     }
-
-    public void ResetBossState()
-    {
-        if (!IsServer) return;
-
-        hasBeenAwakened.Value = false;
-        hasBeenDefeated.Value = false;
-        bossFightIsActive.Value = false;
-        aiCharacterNetworkManager.currentHealth.Value = aiCharacterNetworkManager.maxHealth.Value;
-        aiCharacterNetworkManager.isActive.Value = true;
-    }
 }
