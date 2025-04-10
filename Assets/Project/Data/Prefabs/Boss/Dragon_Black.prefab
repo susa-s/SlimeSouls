@@ -9308,8 +9308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a965e11cf36c78e40bbe399e86ced895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageGrunts:
-  - {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
+  damageGrunts: []
   attackGrunts: []
   clawSwipes: []
   fireBreath:
