@@ -34,3 +34,8 @@ public enum AttackType
     DragonFireBreathAttack,
     DragonBackStep
 }
+
+public enum ItemPickUpType
+{
+    WorldSpawn
+}

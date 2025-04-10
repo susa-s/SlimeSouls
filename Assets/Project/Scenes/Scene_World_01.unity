@@ -4191,11 +4191,23 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 989963663}
+    m_TransformParent: {fileID: 1278321997}
     m_Modifications:
     - target: {fileID: 1431098292290490072, guid: 821ed8993eb732f419340899a4e89636, type: 3}
       propertyPath: m_Name
       value: Sword1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431098292290490072, guid: 821ed8993eb732f419340899a4e89636, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932165134814529228, guid: 821ed8993eb732f419340899a4e89636, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240736153358756669, guid: 821ed8993eb732f419340899a4e89636, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3519776267447239002, guid: 821ed8993eb732f419340899a4e89636, type: 3}
       propertyPath: m_LocalScale.x
@@ -4207,7 +4219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3519776267447239002, guid: 821ed8993eb732f419340899a4e89636, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0199296
+      value: 1.0199295
       objectReference: {fileID: 0}
     - target: {fileID: 3519776267447239002, guid: 821ed8993eb732f419340899a4e89636, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4215,7 +4227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3519776267447239002, guid: 821ed8993eb732f419340899a4e89636, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.9900002
+      value: 5.9900007
       objectReference: {fileID: 0}
     - target: {fileID: 3519776267447239002, guid: 821ed8993eb732f419340899a4e89636, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4248,6 +4260,10 @@ PrefabInstance:
     - target: {fileID: 3519776267447239002, guid: 821ed8993eb732f419340899a4e89636, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037201678594718911, guid: 821ed8993eb732f419340899a4e89636, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4884,9 +4900,9 @@ GameObject:
   - component: {fileID: 989963662}
   - component: {fileID: 989963661}
   - component: {fileID: 989963660}
-  - component: {fileID: 989963664}
   - component: {fileID: 989963665}
-  m_Layer: 12
+  - component: {fileID: 989963666}
+  m_Layer: 0
   m_Name: Sword Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4982,26 +4998,9 @@ Transform:
   m_LocalScale: {x: 1.6, y: 0.91, z: 1.54}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 818142539}
-  - {fileID: 1445590133}
+  - {fileID: 1278321997}
   m_Father: {fileID: 2013130865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &989963664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989963659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e115befbf8eea50469092cea72c278cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  interactableText: Press 'Triangle' to pick up
-  interactableCollider: {fileID: 1445590134}
-  hostOnlyInteractable: 0
 --- !u!54 &989963665
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5029,6 +5028,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &989963666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989963659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ff1589d3e9ac84794284eeb5ce9180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  interactableText: 
+  interactableCollider: {fileID: 0}
+  hostOnlyInteractable: 0
+  pickUpType: 0
+  item: {fileID: 11400000, guid: c7c88839bcf71cf49bf5fd4b6c43aa11, type: 2}
+  itemID: 0
+  hasBeenLooted: 0
 --- !u!1001 &1005851247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6067,6 +6086,109 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1278321996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1278321997}
+  - component: {fileID: 1278322000}
+  - component: {fileID: 1278321999}
+  - component: {fileID: 1278321998}
+  m_Layer: 12
+  m_Name: Interactable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1278321997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278321996}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 818142539}
+  m_Father: {fileID: 989963663}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1278321998
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278321996}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!135 &1278321999
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278321996}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0.23, z: 0}
+--- !u!114 &1278322000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278321996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ff1589d3e9ac84794284eeb5ce9180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  interactableText: Press 'Triangle' to pick up
+  interactableCollider: {fileID: 1278321999}
+  hostOnlyInteractable: 0
+  pickUpType: 0
+  item: {fileID: 11400000, guid: c7c88839bcf71cf49bf5fd4b6c43aa11, type: 2}
+  itemID: 0
+  hasBeenLooted: 0
 --- !u!1 &1312589587
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,59 +7006,6 @@ CapsuleCollider:
   m_Height: 13.50647
   m_Direction: 1
   m_Center: {x: 0, y: 6.6543865, z: 0.0000011920929}
---- !u!1 &1445590132
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1445590133}
-  - component: {fileID: 1445590134}
-  m_Layer: 12
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1445590133
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445590132}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.446553, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 989963663}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1445590134
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445590132}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2.69
-  m_Center: {x: 0, y: -1.17, z: 0}
 --- !u!1 &1470784879
 GameObject:
   m_ObjectHideFlags: 0
@@ -7200,6 +7269,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5404882662001188082, guid: 8810219ce43a1234a9ab11b3e70f19e4, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1599182708}
+    - targetCorrespondingSourceObject: {fileID: 5404882662001188082, guid: 8810219ce43a1234a9ab11b3e70f19e4, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1599182706}
     - targetCorrespondingSourceObject: {fileID: 5404882662001188082, guid: 8810219ce43a1234a9ab11b3e70f19e4, type: 3}
       insertIndex: -1
@@ -7258,9 +7330,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  interactableText: 'Hello! Long story short, there''s a dragon roaming this area.
-    Want to defeat it? You''re going to need some help. There''s a sword nearby and
-    other signs to help you get more accustomed in this world. '
+  interactableText: "Welcome!  A mighty dragon roams these lands. You, however, are
+    no ordinary being\u2014you're a slime! But don't let that fool you. You\u2019ve
+    got potential. To get started, follow the path ahead. You\u2019ll find a sword,
+    and other signs to help you get accustomed to this world. Don\u2019t worry, it\u2019s
+    just your size."
   interactableCollider: {fileID: 1088932821}
   hostOnlyInteractable: 0
 --- !u!65 &1599182707
@@ -7284,6 +7358,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.3738105, y: 0.90582854, z: 4.409899}
   m_Center: {x: 0.3731364, y: -0.15010697, z: 0.7258925}
+--- !u!114 &1599182708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599182704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 375928702
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &1634142343
 GameObject:
   m_ObjectHideFlags: 0

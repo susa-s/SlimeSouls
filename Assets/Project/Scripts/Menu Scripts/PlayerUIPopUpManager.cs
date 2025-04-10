@@ -9,6 +9,12 @@ public class PlayerUIPopUpManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI popUpMessageText;
     [SerializeField] GameObject popUpMessageGameObject;
 
+    [Header("Item Pop Up")]
+    [SerializeField] GameObject itemPopUpGameObject;
+    [SerializeField] Image itemIcon;
+    [SerializeField] TextMeshProUGUI itemName;
+    [SerializeField] TextMeshProUGUI itemAmount;
+
     [Header("You Died Pop UP")]
     [SerializeField] GameObject youDiedPopUpGameObject;
     [SerializeField] TextMeshProUGUI youDiedPopUpBackgroundText;
@@ -28,6 +34,7 @@ public class PlayerUIPopUpManager : MonoBehaviour
     public void CloseAllPopUpWindows()
     {
         popUpMessageGameObject.SetActive(false);
+        itemPopUpGameObject.SetActive(false);
 
         PlayerUIManager.instance.popUpWindowIsOpen = false;
     }
@@ -37,6 +44,22 @@ public class PlayerUIPopUpManager : MonoBehaviour
         PlayerUIManager.instance.popUpWindowIsOpen = true;
         popUpMessageText.text = messageText;
         popUpMessageGameObject.SetActive(true);
+    }
+
+    public void SendItemPopUp(Item item, int amount)
+    {
+        itemAmount.enabled = false;
+        itemIcon.sprite = item.itemIcon;
+        itemName.text = item.itemName;
+        
+        if(amount > 0)
+        {
+            itemAmount.enabled = true;
+            itemAmount.text = "x" + amount.ToString();
+        }
+
+        itemPopUpGameObject.SetActive(true);
+        PlayerUIManager.instance.popUpWindowIsOpen = true;
     }
 
     public void SendYouDiedPopUP()

@@ -6,6 +6,7 @@ public class WorldSFXManager : MonoBehaviour
 
     [Header("ActionSounds")]
     public AudioClip rollSFX;
+    public AudioClip itemPickUpSFX;
 
     [Header("Damage Sounds")]
     public AudioClip[] physicalDamageSFX;

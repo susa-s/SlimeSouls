@@ -600,6 +600,7 @@ MonoBehaviour:
   playerInventoryManager: {fileID: 0}
   playerEquipmentManager: {fileID: 0}
   playerCombatManager: {fileID: 0}
+  playerInteractionManager: {fileID: 0}
 --- !u!114 &3654898505301161094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,10 +649,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 11400000, guid: e596eff69de7127408ad5c5c7765f93b, type: 2}
   weaponsInSlots:
-  - {fileID: 11400000, guid: c7c88839bcf71cf49bf5fd4b6c43aa11, type: 2}
+  - {fileID: 11400000, guid: e596eff69de7127408ad5c5c7765f93b, type: 2}
   - {fileID: 11400000, guid: e596eff69de7127408ad5c5c7765f93b, type: 2}
   - {fileID: 11400000, guid: e596eff69de7127408ad5c5c7765f93b, type: 2}
   weaponIndex: 0
+  itemsInInventory: []
 --- !u!114 &-347068854838410713
 MonoBehaviour:
   m_ObjectHideFlags: 0
