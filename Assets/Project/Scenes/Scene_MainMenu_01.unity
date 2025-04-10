@@ -1736,6 +1736,10 @@ PrefabInstance:
       propertyPath: backstepSFX
       value: 
       objectReference: {fileID: 8300000, guid: 49d741316c7095049ba513a0eec0e0d0, type: 3}
+    - target: {fileID: 7788974413460060862, guid: 8f44e25d7a144d54f9256dc42e038f1e, type: 3}
+      propertyPath: itemPickUpSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: b0e62ed71b1538648b719821f4f63b4c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

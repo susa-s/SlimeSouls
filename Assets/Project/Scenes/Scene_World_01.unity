@@ -9858,7 +9858,7 @@ GameObject:
   - component: {fileID: 2059036917}
   - component: {fileID: 2059036918}
   m_Layer: 0
-  m_Name: Respawn Spot
+  m_Name: Respawn Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9967,6 +9967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 0.5
   frequency: 1
+  rotationSpeed: 1.5
 --- !u!114 &2059036916
 MonoBehaviour:
   m_ObjectHideFlags: 0
