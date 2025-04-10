@@ -146,6 +146,10 @@ public class PlayerManager : CharacterManager
 
         yield return PlayerUIManager.instance.playerUIPopUpManager.FadeToBlack();
 
+        PlayerUIManager.instance.playerUIHudManager.ClearBossHPBar();
+
+        WorldAIManager.instance.ResetAllCharacters();
+
         yield return new WaitForSeconds(0.5f);
 
         Vector3 respawnPoint = new Vector3(74, 1, -70); 

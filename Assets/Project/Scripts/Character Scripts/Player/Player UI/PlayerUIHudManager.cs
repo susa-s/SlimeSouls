@@ -63,4 +63,12 @@ public class PlayerUIHudManager : MonoBehaviour
         weaponQuickSlotIcon.sprite = weapon.itemIcon;
         weaponQuickSlotIcon.enabled = true;
     }
+
+    public void ClearBossHPBar()
+    {
+        foreach (Transform child in bossHealthBarParent)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }
