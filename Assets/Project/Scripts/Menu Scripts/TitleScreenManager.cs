@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TitleScreenManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class TitleScreenManager : MonoBehaviour
     [SerializeField] Button noCharacterSlotsOkayButton;
     [SerializeField] GameObject deleteCharacterSlotPopUp;
 
+    [SerializeField] GameObject lastSelected;
+
     [Header("Save Slots")]
     public CharacterSlot currentSelectedSlot = CharacterSlot.NO_SLOT;
 
@@ -34,6 +37,21 @@ public class TitleScreenManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (EventSystem.current.currentSelectedGameObject == null)
+        {
+            if (lastSelected && lastSelected.gameObject.activeSelf && lastSelected.GetComponent<Button>() != null && lastSelected.GetComponent<Button>().interactable)
+            {
+                EventSystem.current.SetSelectedGameObject(lastSelected);
+            }
+        }
+        else
+        {
+            lastSelected = EventSystem.current.currentSelectedGameObject;
         }
     }
 
