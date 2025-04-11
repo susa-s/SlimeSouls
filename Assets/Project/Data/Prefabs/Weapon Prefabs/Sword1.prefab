@@ -115,8 +115,12 @@ MonoBehaviour:
   damageCollider: {fileID: 4637295934537169212}
   physicalDamage: 0
   magicDamage: 0
+  poiseDamage: 35
   characterCausingDamage: {fileID: 0}
   light_Attack_01_Modifier: 0
+  light_Attack_02_Modifier: 0
+  heavy_Attack_01_Modifier: 0
+  charged_Attack_01_Modifier: 0
 --- !u!1 &2240736153358756669
 GameObject:
   m_ObjectHideFlags: 0

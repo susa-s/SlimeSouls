@@ -9,7 +9,6 @@ public class TakeDamageEffect : InstantCharacterEffect
     [Header("Damage")]
     public float physicalDamage = 0;
     public float magicDamage = 0;
-    // public float fireDamage = 0;
 
     [Header("Final Damage")]
     private int finalDamageDealt = 0;
@@ -65,6 +64,14 @@ public class TakeDamageEffect : InstantCharacterEffect
         }
 
         character.characterNetworkManager.currentHealth.Value -= finalDamageDealt;
+
+        character.characterStatsManager.totalPoiseDamage -= poiseDamage;
+        float remainingPoise = character.characterStatsManager.defaultPoiseDefense + character.characterStatsManager.offensivePoiseBonus + character.characterStatsManager.totalPoiseDamage;
+
+        if (remainingPoise <= 0)
+            poiseIsBroken = true;
+
+        character.characterStatsManager.poiseResetTimer = character.characterStatsManager.defaultPoiseResetTime;
     }
 
     private void PlayDamageVFX(CharacterManager character)
@@ -88,7 +95,8 @@ public class TakeDamageEffect : InstantCharacterEffect
         if (character.isDead.Value)
             return;
 
-        poiseIsBroken = true;
+        if (!poiseIsBroken)
+            return;
 
         if (angleHitFrom >= 145 && angleHitFrom <= 180)
         {

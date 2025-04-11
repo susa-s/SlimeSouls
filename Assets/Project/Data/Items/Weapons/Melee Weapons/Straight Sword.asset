@@ -20,7 +20,7 @@ MonoBehaviour:
   strengthREQ: 1
   physicalDamage: 20
   magicDamage: 0
-  poiseDamage: 10
+  poiseDamage: 35
   light_attack_01_Modifier: 1.2
   light_attack_02_Modifier: 1.4
   heavy_attack_01_Modifier: 2

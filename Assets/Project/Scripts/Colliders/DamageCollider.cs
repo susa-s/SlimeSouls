@@ -10,6 +10,7 @@ public class DamageCollider : MonoBehaviour
     [Header("Damage")]
     public float physicalDamage = 0;
     public float magicDamage = 0;
+    public float poiseDamage = 0;
 
     [Header("Contact Point")]
     protected Vector3 contactPoint;

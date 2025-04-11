@@ -10,6 +10,13 @@ public class CharacterStatsManager : MonoBehaviour
     [SerializeField] float staminaRegenerationDelay = 1;
     [SerializeField] float staminaRegenAmount = 0.25f;
 
+    [Header("Poise")]
+    public float totalPoiseDamage;
+    public float offensivePoiseBonus;
+    public float defaultPoiseDefense;
+    public float defaultPoiseResetTime = 8;
+    public float poiseResetTimer = 0;
+
     protected virtual void Awake()
     {
         Character = GetComponent<CharacterManager>();
@@ -18,6 +25,11 @@ public class CharacterStatsManager : MonoBehaviour
     protected virtual void Start()
     {
 
+    }
+
+    protected virtual void Update()
+    {
+        HandlePoiseResetTimer();    
     }
 
     public int CalculateHealthBasedOnVitalityLevel(int vitality)
@@ -67,6 +79,18 @@ public class CharacterStatsManager : MonoBehaviour
         if(currentStaminaAmount < previousStaminaAmount)
         {
             staminaRegenerationTimer = 0;
+        }
+    }
+
+    protected virtual void HandlePoiseResetTimer()
+    {
+        if(poiseResetTimer > 0)
+        {
+            poiseResetTimer -= Time.deltaTime;
+        }
+        else
+        {
+            totalPoiseDamage = 0;
         }
     }
 }

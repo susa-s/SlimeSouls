@@ -113,6 +113,7 @@ MonoBehaviour:
   damageCollider: {fileID: 4769575679012149409}
   physicalDamage: 25
   magicDamage: 0
+  poiseDamage: 0
   bossCharacter: {fileID: 0}
 --- !u!1 &963094608698781290
 GameObject:
@@ -193,6 +194,7 @@ MonoBehaviour:
   damageCollider: {fileID: 2364279805927657478}
   physicalDamage: 25
   magicDamage: 0
+  poiseDamage: 0
   bossCharacter: {fileID: 0}
 --- !u!136 &2364279805927657478
 CapsuleCollider:
@@ -286,6 +288,7 @@ MonoBehaviour:
   damageCollider: {fileID: 7806414193119625235}
   physicalDamage: 25
   magicDamage: 0
+  poiseDamage: 0
   bossCharacter: {fileID: 0}
 --- !u!1 &7532434901518173341
 GameObject:
@@ -8982,6 +8985,7 @@ MonoBehaviour:
   characterAnimatorManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
   characterSFXManager: {fileID: 0}
+  characterStatsManager: {fileID: 0}
   charactergroup: 1
   isPerformingAction: 0
   isGrounded: 1
@@ -9097,6 +9101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaRegenerationDelay: 1
   staminaRegenAmount: 0.25
+  totalPoiseDamage: 0
+  offensivePoiseBonus: 0
+  defaultPoiseDefense: 100
+  defaultPoiseResetTime: 6
+  poiseResetTimer: 0
 --- !u!114 &549977959439243402
 MonoBehaviour:
   m_ObjectHideFlags: 0
