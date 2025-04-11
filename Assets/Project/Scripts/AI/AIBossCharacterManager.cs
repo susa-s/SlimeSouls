@@ -7,6 +7,10 @@ public class AIBossCharacterManager : AICharacterManager
 {
     public int bossID = 0;
 
+    [Header("Music")]
+    [SerializeField] AudioClip bossIntroClip;
+    [SerializeField] AudioClip bossBattleLoopClip;
+
     [Header("Status")]
     public NetworkVariable<bool> bossFightIsActive = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public NetworkVariable<bool> hasBeenDefeated = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -173,10 +177,16 @@ public class AIBossCharacterManager : AICharacterManager
     {
         if (bossFightIsActive.Value)
         {
+            WorldSFXManager.instance.PlayBossTrack(bossIntroClip, bossBattleLoopClip);
+
             GameObject bossHealthBar = Instantiate(PlayerUIManager.instance.playerUIHudManager.bossHealthBarObject, PlayerUIManager.instance.playerUIHudManager.bossHealthBarParent);
 
             UI_Boss_HP_Bar bossHPBar = bossHealthBar.GetComponentInChildren<UI_Boss_HP_Bar>();
             bossHPBar.EnableBossHPBar(this);
+        }
+        else
+        {
+            WorldSFXManager.instance.StopBossMusic();
         }
     }
 }

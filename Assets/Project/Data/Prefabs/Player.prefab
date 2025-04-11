@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageGrunts:
-  - {fileID: 8300000, guid: 17cb9468c34c8424d9d7fb9e05d0d005, type: 3}
+  - {fileID: 8300000, guid: b623d895b80967249a717b5970fbe6da, type: 3}
   attackGrunts:
   - {fileID: 8300000, guid: d1f8295b23efb184db56e33d77eda78e, type: 3}
 --- !u!95 &8810380673921967170

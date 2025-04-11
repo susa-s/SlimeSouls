@@ -8999,6 +8999,8 @@ MonoBehaviour:
   combatStance: {fileID: 11400000, guid: 9fbca7866e601ed4ba61028edca3e3ca, type: 2}
   attack: {fileID: 11400000, guid: 1f0944edd7be3ca45b1e456564548314, type: 2}
   bossID: 0
+  bossIntroClip: {fileID: 8300000, guid: 5d24518af4f3de941af7030217f6ef64, type: 3}
+  bossBattleLoopClip: {fileID: 8300000, guid: cb0a6b684a65b1f48b5281577f166edd, type: 3}
   bossFightIsActive:
     m_InternalValue: 0
   hasBeenDefeated:

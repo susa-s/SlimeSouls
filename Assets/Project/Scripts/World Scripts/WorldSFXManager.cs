@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class WorldSFXManager : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class WorldSFXManager : MonoBehaviour
 
     [Header("Damage Sounds")]
     public AudioClip[] physicalDamageSFX;
+
+    [Header("Boss Track")]
+    [SerializeField] AudioSource bossIntroPlayer;
+    [SerializeField] AudioSource bossLoopPlayer;
 
     private void Awake()
     {
@@ -28,10 +33,41 @@ public class WorldSFXManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void PlayBossTrack(AudioClip introTrack, AudioClip loopTrack)
+    {
+        bossIntroPlayer.volume = .1f;
+        bossIntroPlayer.clip = introTrack;
+        bossIntroPlayer.loop = false;
+        bossIntroPlayer.Play();
+
+        bossLoopPlayer.volume = .1f;
+        bossLoopPlayer.clip = loopTrack;
+        bossLoopPlayer.loop = true;
+        bossLoopPlayer.PlayDelayed(bossIntroPlayer.clip.length);
+    }
+
     public AudioClip ChooseRandomSFXFromArray(AudioClip[] array)
     {
         int index = Random.Range(0, array.Length);
 
         return array[index];
+    }
+
+    public void StopBossMusic()
+    {
+        StartCoroutine(FadeOutBossMusicThenStop());
+    }
+
+    private IEnumerator FadeOutBossMusicThenStop()
+    {
+        while(bossIntroPlayer.volume > 0)
+        {
+            bossLoopPlayer.volume -= Time.deltaTime;
+            bossIntroPlayer.volume -= Time.deltaTime;
+            yield return null;
+        }
+
+        bossIntroPlayer.Stop();
+        bossLoopPlayer.Stop();
     }
 }
