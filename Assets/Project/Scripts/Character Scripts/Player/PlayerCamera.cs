@@ -56,6 +56,7 @@ public class PlayerCamera : MonoBehaviour
         if (player.isDead.Value)
         {
             ClearLockOnTargets();
+            HandleRotations();
             player.playerNetworkManager.islockedOn.Value = false;
             return;
         }
