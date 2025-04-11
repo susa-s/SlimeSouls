@@ -9104,7 +9104,7 @@ MonoBehaviour:
   totalPoiseDamage: 0
   offensivePoiseBonus: 0
   defaultPoiseDefense: 100
-  defaultPoiseResetTime: 6
+  defaultPoiseResetTime: 5
   poiseResetTimer: 0
 --- !u!114 &549977959439243402
 MonoBehaviour:
