@@ -62,6 +62,11 @@ public class AICharacterManager : CharacterManager
         aiCharacterCombatManager.HandleActionRecovery(this);
     }
 
+    protected override void LateUpdate()
+    {
+        base.LateUpdate();
+    }
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
