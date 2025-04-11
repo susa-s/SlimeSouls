@@ -19,12 +19,19 @@ public class FogWallInteractable : Interactable
     public override void Interact(PlayerManager player)
     {
         base.Interact(player);
+        StartCoroutine(HandleInteract(player));
+    }
 
+    private IEnumerator HandleInteract(PlayerManager player)
+    {
         Quaternion targetRotation = Quaternion.Euler(0f, 135f, 0f);
         player.transform.rotation = targetRotation;
 
         AllowPlayerThroughFogWallCollidersServerRpc(player.NetworkObjectId);
         player.playerAnimatorManager.PlayTargetActionAnimation("PassThroughFog", true);
+
+        yield return new WaitForSeconds(4f);
+        interactableCollider.enabled = true;
     }
 
     public override void OnNetworkSpawn()

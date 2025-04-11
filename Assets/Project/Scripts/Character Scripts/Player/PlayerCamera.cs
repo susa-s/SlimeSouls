@@ -53,6 +53,13 @@ public class PlayerCamera : MonoBehaviour
 
     public void HandleAllCameraActions()
     {
+        if (player.isDead.Value)
+        {
+            ClearLockOnTargets();
+            player.playerNetworkManager.islockedOn.Value = false;
+            return;
+        }
+
         if(player != null)
         {
             HandleFollowTarget();
