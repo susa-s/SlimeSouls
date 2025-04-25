@@ -451,7 +451,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.5587379, z: -0, w: 0.8293444}
   m_LocalPosition: {x: -6.6599174, y: -0.1, z: 3.8040042}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2458012436429631879}
@@ -508,14 +508,23 @@ MonoBehaviour:
   characterAnimatorManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
   characterSFXManager: {fileID: 0}
+  characterStatsManager: {fileID: 0}
   charactergroup: 1
   isPerformingAction: 0
   isGrounded: 1
   applyRootMotion: 0
   canRotate: 1
   canMove: 1
+  characterName: 
+  aiCharacterNetworkManager: {fileID: 0}
   aiCharacterCombatManager: {fileID: 0}
+  aiCharacterLocomotionManager: {fileID: 0}
+  navMeshAgent: {fileID: 0}
   currentState: {fileID: 11400000, guid: a19cda83a5be9c242b130eaf8b4b513d, type: 2}
+  idle: {fileID: 0}
+  pursueTarget: {fileID: 0}
+  combatStance: {fileID: 0}
+  attack: {fileID: 0}
 --- !u!114 &6997646722374590599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  isActive:
+    m_InternalValue: 1
   networkPosition:
     m_InternalValue: {x: 0, y: 0, z: 0}
   networkRotation:
@@ -536,6 +547,8 @@ MonoBehaviour:
   networkPositionVelocity: {x: 0, y: 0, z: 0}
   networkPositionSmoothTime: 0.1
   networkRotationSmoothTime: 0.1
+  isMoving:
+    m_InternalValue: 0
   horizontalMovement:
     m_InternalValue: 0
   verticalMovement:
@@ -543,6 +556,8 @@ MonoBehaviour:
   moveAmount:
     m_InternalValue: 0
   currentTargetNetworkObjectID:
+    m_InternalValue: 0
+  isInvulnerable:
     m_InternalValue: 0
   isSprinting:
     m_InternalValue: 0
@@ -576,6 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd72e69d246bb64d93b6d115b8bd22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
   gravityForce: -20
   groundLayer:
     serializedVersion: 2
@@ -638,6 +654,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaRegenerationDelay: 1
   staminaRegenAmount: 0.25
+  totalPoiseDamage: 0
+  offensivePoiseBonus: 0
+  defaultPoiseDefense: 0
+  defaultPoiseResetTime: 8
+  poiseResetTimer: 0
 --- !u!114 &1436484634718948974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,6 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  lastAttackAnimationPerformed: 
   currentTarget: {fileID: 0}
   currentAttackType: 0
   lockOnTransform: {fileID: 6621052923006365143}
@@ -679,6 +701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4e5e8e02b30b54b92113fca88ff5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageGrunts: []
+  attackGrunts: []
 --- !u!95 &8810380673921967170
 Animator:
   serializedVersion: 7
@@ -863,9 +887,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  lastAttackAnimationPerformed: 
   currentTarget: {fileID: 0}
   currentAttackType: 0
   lockOnTransform: {fileID: 6621052923006365143}
+  distanceFromTarget: 0
+  viewableAngle: 0
+  targetsDirection: {x: 0, y: 0, z: 0}
+  actionRecoveryTimer: 0
+  enablePivot: 1
   detectionRadius: 15
-  minimumViewableAngle: -35
-  maximumViewableAngle: 35
+  minimumFOV: -35
+  maximumFOV: 35
+  attackRotationSpeed: 25
