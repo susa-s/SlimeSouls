@@ -21,6 +21,12 @@ public class AIBossCharacterManager : AICharacterManager
 
     [Header("States")]
     [SerializeField] BossSleepState sleepState;
+    [SerializeField] CombatStanceState phase2CombatStanceState;
+
+    [Header("Phase Shift")]
+    public float phaseShiftHPPercentage = 50;
+    [SerializeField] string phaseShiftAnimation = "PhaseShift";
+
 
     protected override void Awake()
     {
@@ -37,7 +43,8 @@ public class AIBossCharacterManager : AICharacterManager
         if (IsOwner)
         {
             sleepState = Instantiate(sleepState);
-
+            combatStance = Instantiate(combatStance);
+            attack = Instantiate(attack);
             currentState = sleepState;
         }
 
@@ -188,5 +195,12 @@ public class AIBossCharacterManager : AICharacterManager
         {
             WorldSFXManager.instance.StopBossMusic();
         }
+    }
+    
+    public void PhaseShift()
+    {
+        characterAnimatorManager.PlayTargetActionAnimation(phaseShiftAnimation, true);
+        combatStance = Instantiate(phase2CombatStanceState);
+        currentState = combatStance;
     }
 }

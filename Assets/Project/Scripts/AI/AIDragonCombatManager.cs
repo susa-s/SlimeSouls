@@ -16,7 +16,7 @@ public class AIDragonCombatManager : AICharacterCombatManager
     [SerializeField] int fireDamage = 30;
     [SerializeField] float attack01DamageModifer = 1.0f;
     [SerializeField] float attack02DamageModifer = 1.4f;
-    [SerializeField] float attack03DamageModifer = 0.8f;
+    //[SerializeField] float attack03DamageModifer = 0.8f;
 
     protected override void Awake()
     {

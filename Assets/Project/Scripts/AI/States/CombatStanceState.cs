@@ -125,5 +125,6 @@ public class CombatStanceState : AIState
 
         hasAttack = false;
         hasRolledForComboChance = false;
+        
     }
 }

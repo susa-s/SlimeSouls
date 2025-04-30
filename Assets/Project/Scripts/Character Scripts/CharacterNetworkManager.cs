@@ -46,7 +46,7 @@ public class CharacterNetworkManager : NetworkBehaviour
         character = GetComponent<CharacterManager>();
     }
 
-    public void CheckHP(int oldvalue, int newValue)
+    public virtual void CheckHP(int oldvalue, int newValue)
     {
         if(currentHealth.Value <= 0)
         {

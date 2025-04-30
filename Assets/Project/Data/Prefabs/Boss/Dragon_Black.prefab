@@ -9003,7 +9003,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   idle: {fileID: 11400000, guid: b23350668852eb2498ad58964633c652, type: 2}
   pursueTarget: {fileID: 11400000, guid: ba155b668bdb67844b65f7d4544dd520, type: 2}
-  combatStance: {fileID: 11400000, guid: 9fbca7866e601ed4ba61028edca3e3ca, type: 2}
+  combatStance: {fileID: 11400000, guid: 5cc8742820f2bf144b893abe369fed61, type: 2}
   attack: {fileID: 11400000, guid: 1f0944edd7be3ca45b1e456564548314, type: 2}
   bossID: 0
   bossIntroClip: {fileID: 8300000, guid: 5d24518af4f3de941af7030217f6ef64, type: 3}
@@ -9018,6 +9018,9 @@ MonoBehaviour:
   sleepAnimation: DragonSleep
   awakenAnimation: DragonAwaken
   sleepState: {fileID: 11400000, guid: c4fc421d4225ea547ab0783b8af38bd1, type: 2}
+  phase2CombatStanceState: {fileID: 11400000, guid: 9fbca7866e601ed4ba61028edca3e3ca, type: 2}
+  phaseShiftHPPercentage: 50
+  phaseShiftAnimation: PhaseShift
   dragonSFXManager: {fileID: 0}
   dragonCombatManager: {fileID: 0}
 --- !u!114 &1960119238754944088
@@ -9107,7 +9110,7 @@ MonoBehaviour:
   totalPoiseDamage: 0
   offensivePoiseBonus: 0
   defaultPoiseDefense: 100
-  defaultPoiseResetTime: 5
+  defaultPoiseResetTime: 2
   poiseResetTimer: 0
 --- !u!114 &549977959439243402
 MonoBehaviour:
@@ -9191,7 +9194,6 @@ MonoBehaviour:
   fireDamage: 30
   attack01DamageModifer: 1
   attack02DamageModifer: 1.4
-  attack03DamageModifer: 0.8
 --- !u!114 &4014203788516742109
 MonoBehaviour:
   m_ObjectHideFlags: 0
