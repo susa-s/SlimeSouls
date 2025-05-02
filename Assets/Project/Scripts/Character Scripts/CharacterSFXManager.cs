@@ -10,6 +10,9 @@ public class CharacterSFXManager : MonoBehaviour
     [Header("Attack Grunts")]
     [SerializeField] protected AudioClip[] attackGrunts;
 
+    [Header("Phase Shift Scream")]
+    public AudioClip[] shiftScream;
+
     protected virtual void Awake()
     {
         audioSource = GetComponent<AudioSource>();

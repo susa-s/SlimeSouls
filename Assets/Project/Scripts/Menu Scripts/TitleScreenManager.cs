@@ -7,10 +7,13 @@ using UnityEngine.EventSystems;
 
 public class TitleScreenManager : MonoBehaviour
 {
+    public static bool playEndCredits = false;
+
     public static TitleScreenManager Instance;
     [Header("Menus")]
     [SerializeField] GameObject titleScreenMainMenu;
     [SerializeField] GameObject titleScreenLoadMenu;
+    [SerializeField] GameObject titleScreenEndCredits;
 
     [Header("Buttons")]
     [SerializeField] Button LoadMenuReturnButton;
@@ -37,6 +40,18 @@ public class TitleScreenManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
+        }
+
+        if (playEndCredits)
+        {
+            titleScreenMainMenu.SetActive(false);
+            titleScreenEndCredits.SetActive(true);
+            StartCoroutine(EndCreditsThenShowMainMenu());
+        }
+        else
+        {
+            titleScreenEndCredits.SetActive(false);
         }
     }
 
@@ -53,6 +68,15 @@ public class TitleScreenManager : MonoBehaviour
         {
             lastSelected = EventSystem.current.currentSelectedGameObject;
         }
+    }
+
+    private IEnumerator EndCreditsThenShowMainMenu()
+    {
+        yield return new WaitForSeconds(10);
+
+        titleScreenEndCredits.SetActive(false);
+
+        playEndCredits = false;
     }
 
     public void StartNetworkAsHost()

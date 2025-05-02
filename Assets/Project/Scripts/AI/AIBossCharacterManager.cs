@@ -26,6 +26,7 @@ public class AIBossCharacterManager : AICharacterManager
     [Header("Phase Shift")]
     public float phaseShiftHPPercentage = 50;
     [SerializeField] string phaseShiftAnimation = "PhaseShift";
+    private bool hasPhaseShifted = false;
 
 
     protected override void Awake()
@@ -199,8 +200,13 @@ public class AIBossCharacterManager : AICharacterManager
     
     public void PhaseShift()
     {
+        if (hasPhaseShifted)
+            return;
+
+        hasPhaseShifted = true;
         characterAnimatorManager.PlayTargetActionAnimation(phaseShiftAnimation, true);
         combatStance = Instantiate(phase2CombatStanceState);
         currentState = combatStance;
+        characterSFXManager.PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(characterSFXManager.shiftScream));
     }
 }

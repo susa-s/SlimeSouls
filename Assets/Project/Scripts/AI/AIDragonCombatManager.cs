@@ -57,6 +57,7 @@ public class AIDragonCombatManager : AICharacterCombatManager
         aiCharacter.characterSFXManager.PlayAttackGrunt();
         fireBreathCollider.EnableDamageCollider();
         dragonManager.characterSFXManager.PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(dragonManager.dragonSFXManager.fireBreath));
+        dragonManager.characterSFXManager.PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(dragonManager.dragonSFXManager.fireBreathScream));
     }
 
     public void CloseRightClawCollider()

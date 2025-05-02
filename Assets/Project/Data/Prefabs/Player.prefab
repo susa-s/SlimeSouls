@@ -585,6 +585,7 @@ MonoBehaviour:
   characterAnimatorManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
   characterSFXManager: {fileID: 0}
+  characterStatsManager: {fileID: 0}
   charactergroup: 0
   isPerformingAction: 0
   isGrounded: 1
@@ -697,8 +698,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6764985e0b5d0a841b23cbc0017e154c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaRegenerationDelay: 1
-  staminaRegenAmount: 3
+  staminaRegenerationDelay: 0.8
+  staminaRegenAmount: 5
+  totalPoiseDamage: 0
+  offensivePoiseBonus: 0
+  defaultPoiseDefense: 0
+  defaultPoiseResetTime: 8
+  poiseResetTimer: 0
 --- !u!114 &9128271140688975078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +755,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b623d895b80967249a717b5970fbe6da, type: 3}
   attackGrunts:
   - {fileID: 8300000, guid: d1f8295b23efb184db56e33d77eda78e, type: 3}
+  shiftScream: []
 --- !u!95 &8810380673921967170
 Animator:
   serializedVersion: 7

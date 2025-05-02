@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dragon Combat Stance State 2
   m_EditorClassIdentifier: 
   aiCharacterAttacks:
+  - {fileID: 11400000, guid: 4a147d814870fae4e81e55c70304cf4e, type: 2}
   - {fileID: 11400000, guid: 495a7c0ae88b5654c8f905544a250d60, type: 2}
   - {fileID: 11400000, guid: 5aaca938f0a1d0d4fbb4e799ee011c6d, type: 2}
   - {fileID: 11400000, guid: 975076c189449e94f951445358ab11eb, type: 2}

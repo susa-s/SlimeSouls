@@ -8953,7 +8953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2958903221
+  GlobalObjectIdHash: 1123469978
   InScenePlacedSourceGlobalObjectIdHash: 2958903221
   DeferredDespawnTick: 0
   Ownership: 1
@@ -9326,9 +9326,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageGrunts: []
   attackGrunts: []
+  shiftScream:
+  - {fileID: 8300000, guid: 320fc7f1ce44dcd45a9c345656bbaa7f, type: 3}
   clawSwipes: []
   fireBreath:
   - {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+  fireBreathScream:
+  - {fileID: 8300000, guid: ba6dba498764bd44b9603d263c27ef3a, type: 3}
 --- !u!114 &-8095649252264870860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9361,7 +9365,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.39, y: 4, z: 7.53}
+  m_Size: {x: 3, y: 4, z: 8}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &5775082762126788122 stripped
 GameObject:

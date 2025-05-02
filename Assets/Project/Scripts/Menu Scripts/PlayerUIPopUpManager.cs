@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
+using Unity.Netcode;
 
 public class PlayerUIPopUpManager : MonoBehaviour
 {
@@ -81,8 +83,22 @@ public class PlayerUIPopUpManager : MonoBehaviour
         StartCoroutine(StretchPopUpTextOverTime(bossDefeatedPopUpBackgroundText, 8, 19f));
         StartCoroutine(FadeInPopUpOverTime(bossDefeatedPopUpCanvasGroup, 5));
         StartCoroutine(WaitThenFadeOutPopUpOverTime(bossDefeatedPopUpCanvasGroup, 2, 5));
+
+
+        StartCoroutine(WaitThenReturnToTitleScreen());
     }
 
+
+    private IEnumerator WaitThenReturnToTitleScreen()
+    {
+        yield return new WaitForSeconds(8f);
+
+        yield return StartCoroutine(FadeToBlack());
+
+        NetworkManager.Singleton.Shutdown();
+        TitleScreenManager.playEndCredits = true;
+        SceneManager.LoadScene(0);
+    }
     public IEnumerator StretchPopUpTextOverTime(TextMeshProUGUI text, float duration, float stretchAmount)
     {
         if(duration > 0)
