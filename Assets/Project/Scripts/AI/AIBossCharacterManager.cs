@@ -112,7 +112,6 @@ public class AIBossCharacterManager : AICharacterManager
     public override IEnumerator ProcessDeathEvent(bool manuallySelectDeathAnimation = false)
     {
         PlayerUIManager.instance.playerUIPopUpManager.SendBossDefeatedPopUP("BOSS DEFEATED");
-        characterSFXManager.PlaySFX(WorldSFXManager.instance.ChooseRandomSFXFromArray(characterSFXManager.shiftScream));
 
         if (IsOwner)
         {
@@ -146,7 +145,7 @@ public class AIBossCharacterManager : AICharacterManager
                 WorldSaveGameManager.instance.currentCharacterData.bossesDefeated.Add(bossID, true);
             }
 
-            //WorldSaveGameManager.instance.SaveGame();
+            WorldSaveGameManager.instance.SaveGame();
         }
 
         yield return new WaitForSeconds(5);
