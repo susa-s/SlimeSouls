@@ -349,7 +349,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6821906817842061593}
   - component: {fileID: 4899160647237015754}
-  - component: {fileID: -8178181911473551113}
   - component: {fileID: 4117470422246266082}
   - component: {fileID: 846289463377753983}
   - component: {fileID: 4208182211996192209}
@@ -364,6 +363,7 @@ GameObject:
   - component: {fileID: -804531610578397953}
   - component: {fileID: -615744935615838525}
   - component: {fileID: 90728903246047681}
+  - component: {fileID: -2738415746797592428}
   m_Layer: 6
   m_Name: Dummy_01
   m_TagString: Untagged
@@ -416,60 +416,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &-8178181911473551113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190084127861701539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f7b8f0ed14d994ca2ad9fcb0d54af1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  isActive:
-    m_InternalValue: 1
-  networkPosition:
-    m_InternalValue: {x: 0, y: 0, z: 0}
-  networkRotation:
-    m_InternalValue: {x: 0, y: 0, z: 0, w: 1}
-  networkPositionVelocity: {x: 0, y: 0, z: 0}
-  networkPositionSmoothTime: 0.1
-  networkRotationSmoothTime: 0.1
-  isMoving:
-    m_InternalValue: 0
-  horizontalMovement:
-    m_InternalValue: 0
-  verticalMovement:
-    m_InternalValue: 0
-  moveAmount:
-    m_InternalValue: 0
-  currentTargetNetworkObjectID:
-    m_InternalValue: 0
-  isInvulnerable:
-    m_InternalValue: 0
-  isSprinting:
-    m_InternalValue: 0
-  isJumping:
-    m_InternalValue: 0
-  isChargingAttack:
-    m_InternalValue: 0
-  islockedOn:
-    m_InternalValue: 0
-  vitality:
-    m_InternalValue: 1
-  endurance:
-    m_InternalValue: 1
-  currentHealth:
-    m_InternalValue: 0
-  maxHealth:
-    m_InternalValue: 0
-  currentStamina:
-    m_InternalValue: 0
-  maxStamina:
-    m_InternalValue: 0
 --- !u!114 &4117470422246266082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +515,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17cb9468c34c8424d9d7fb9e05d0d005, type: 3}
   attackGrunts:
   - {fileID: 8300000, guid: d1f8295b23efb184db56e33d77eda78e, type: 3}
+  shiftScream: []
 --- !u!95 &8810380673921967170
 Animator:
   serializedVersion: 7
@@ -859,6 +806,60 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.88
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &-2738415746797592428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190084127861701539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e3a2c7b0a1b3848904f459599e44fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  isActive:
+    m_InternalValue: 1
+  networkPosition:
+    m_InternalValue: {x: 0, y: 0, z: 0}
+  networkRotation:
+    m_InternalValue: {x: 0, y: 0, z: 0, w: 1}
+  networkPositionVelocity: {x: 0, y: 0, z: 0}
+  networkPositionSmoothTime: 0.1
+  networkRotationSmoothTime: 0.1
+  isMoving:
+    m_InternalValue: 0
+  horizontalMovement:
+    m_InternalValue: 0
+  verticalMovement:
+    m_InternalValue: 0
+  moveAmount:
+    m_InternalValue: 0
+  currentTargetNetworkObjectID:
+    m_InternalValue: 0
+  isInvulnerable:
+    m_InternalValue: 0
+  isSprinting:
+    m_InternalValue: 0
+  isJumping:
+    m_InternalValue: 0
+  isChargingAttack:
+    m_InternalValue: 0
+  islockedOn:
+    m_InternalValue: 0
+  vitality:
+    m_InternalValue: 1
+  endurance:
+    m_InternalValue: 1
+  currentHealth:
+    m_InternalValue: 10000
+  maxHealth:
+    m_InternalValue: 10000
+  currentStamina:
+    m_InternalValue: 0
+  maxStamina:
+    m_InternalValue: 0
 --- !u!1 &7359546340100768099
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class PlayerInventoryManager : CharacterInventoryManager
         if(item is WeaponItem weapon)
         {
             weaponsInSlots[0] = weapon;
+            
         }
     }
 

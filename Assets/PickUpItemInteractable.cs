@@ -48,6 +48,7 @@ public class PickUpItemInteractable : Interactable
         player.characterSFXManager.PlaySFX(WorldSFXManager.instance.itemPickUpSFX);
 
         player.playerInventoryManager.AddItemToInventory(item);
+        player.playerEquipmentManager.SwitchWeapon();
 
         PlayerUIManager.instance.playerUIPopUpManager.SendItemPopUp(item, 1);
 
