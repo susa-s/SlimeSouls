@@ -61,8 +61,59 @@
       padding: 1rem;
       margin-top: 4rem;
     }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      cursor: zoom-out;
+    }
   </style>
 </head>
+
+<script>
+  function openLightbox(img) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    lightboxImg.src = img.src;
+    lightbox.style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
 <body>
   <header>
     <h1>Slime Souls</h1>
@@ -88,8 +139,14 @@
 
     <div class="media">
       <h2>📸 Screenshots</h2>
-      <img src="ScreenShots/screenshot1.png" alt="Slime Souls Screenshot">
-      <p><em>(Add more screenshots here)</em></p>
+      <div class="gallery">
+        <img src="ScreenShots/screenshot1.png" alt="Screenshot 1" onclick="openLightbox(this)">
+        <img src="ScreenShots/screenshot2.png" alt="Screenshot 2" onclick="openLightbox(this)">
+      </div>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="Zoomed Screenshot">
     </div>
 
     <div class="development">
